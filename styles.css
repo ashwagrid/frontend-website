@@ -1,0 +1,183 @@
+/* Google Font: Raleway must be included in your HTML head:
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+*/
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  color: #111;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+}
+
+nav img {
+  height: 100px;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #f26522;
+  border-radius: 4px;
+}
+
+/* Card Styling */
+a.card {
+  position: relative;
+  width: 900px;
+  height: 750px;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+a.card:hover {
+  transform: scale(1.01);
+}
+
+/* Overlay Image */
+a.card .overlay-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+a.card.hovered .overlay-image {
+  opacity: 1;
+}
+
+/* Card Content */
+a.card .card-content {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 15px;
+  width: 100%;
+  color: #000;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  z-index: 2;
+}
+
+a.card h2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+a.card p {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #f26522;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d9541c;
+}
+
+/* Responsive Styles */
+@media (max-width: 1920px) {
+  a.card {
+    width: 900px;
+    height: 750px;
+  }
+  a.card h2 {
+    font-size: 36px;
+  }
+  a.card p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1200px) {
+  a.card {
+    width: 450px;
+    height: 400px;
+  }
+  a.card h2 {
+    font-size: 28px;
+  }
+  a.card p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  a.card {
+    width: 300px;
+    height: 270px;
+  }
+  a.card h2 {
+    font-size: 22px;
+  }
+  a.card p {
+    font-size: 16px;
+  }
+}
+/* Change text color when overlay is visible */
+a.card.hovered .card-content h2,
+a.card.hovered .card-content p,
+a.card.hovered .btn {
+  color: white;
+}
+
+a.card.hovered .btn {
+  background-color: #d9541c;
+}
