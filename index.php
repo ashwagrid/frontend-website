@@ -20,14 +20,14 @@
     // Card data array
     $cards = [
       [
-        "link" => "mobility.html",
+        "link" => "mobility.php",
         "bgImage" => "images/2.png",
         "overlayImage" => "images/4.png",
         "title" => "Mobility",
         "desc" => "Move fast. Move with AshwaGrid"
       ],
       [
-        "link" => "manpower.html",
+        "link" => "manpower.php",
         "bgImage" => "images/33.png",
         "overlayImage" => "images/5.png",
         "title" => "Manpower",

@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Raleway', sans-serif;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 2px;
+  width: auto;
+  object-fit: contain;
+}
+
+.dropdown {
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 28px;
+  background-color: #f0f0f0;
+  color: #222;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='32' viewBox='0 0 24 24' width='32' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 32px;
+  padding-right: 56px;
+  appearance: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/6.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 0 80px 80px; /* curved bottom edge */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 100px;
+}
+
+.hero-text {
+  color: #fff;
+  text-align: right;
+  max-width: 500px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin-left: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: white;
+}
+
+.btn-orange {
+  background-color: orange;
+  color: white;
+}
