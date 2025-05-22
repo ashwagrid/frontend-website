@@ -15,3 +15,15 @@ cards.forEach(card => {
   });
 });
  
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('nav ul li a');
+  const currentUrl = window.location.pathname; // or window.location.hash
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentUrl || link.getAttribute('href') === window.location.hash) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});

@@ -1,3 +1,4 @@
+/* CSS FOR WHO ARE WE PAGE 197 LINE  */
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +21,7 @@ header {
   padding: 15px 40px;
   background: #fff;
 }
-
+/* ASHWA LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -32,7 +33,7 @@ header {
   width: auto;
   object-fit: contain;
 }
-
+ /* CHOOSE SERVICE DROPDOWN */
 .dropdown {
   padding: 14px 20px;
   font-size: 16px;
@@ -63,6 +64,12 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #e9601d;
+  transition: color 0.3s ease;
+}
+
+nav ul li a.active {
+  color: #e9601d;
+  font-weight: bold; /* optional */
 }
 
 .hero {
@@ -187,3 +194,105 @@ nav ul li a:hover {
     gap: 16px;
   }
 }
+
+/* CSS FOR WHO.PHP PAGE  *************************************************************************************** */
+.highlight-section {
+      background-color: #f1f1f1; /* Change this color as needed */
+      padding: 40px;
+      border-radius: 12px;
+      height: 880px;
+    }
+
+.hero-text1 {
+      max-width: 100%;
+      width: 1200px;
+      margin: auto;
+    }
+
+    .hero-text1 h1 {
+      font-size: 90px;
+      margin: 10px 0;
+    }
+
+    .hero-text1 p {
+      max-width: 1200px;
+      margin: 20px auto 40px;
+      font-size: 23px;
+      color: black;
+      text-align: center;
+    }
+
+    .blue {
+      color: #1c1d4e;
+      display: block;
+      text-align: left;
+      margin-left: -20px;
+    }
+
+    .orange {
+      color: #ff6533;
+      display: block;
+      text-align: left;
+      margin-left: 30%;
+    }
+
+    .hero-images1 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .hero-images1 img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+.hero-images1 img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+     /* Animation */
+    .slide-in {
+      opacity: 0;
+      transform: translateX(-20%);
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    .slide-in.delay {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-20%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text1 h1 {
+        font-size: 8vw;
+        text-align: center;
+      }
+
+      .blue, .orange {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .hero-text1 p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      .hero-images1 img {
+        flex: 1 1 100%;
+      }
+    }

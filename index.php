@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>AshwaGrid</title>
+ <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data: http: https:;
+  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+  font-src https://fonts.gstatic.com;
+  script-src 'self' 'unsafe-inline';
+  object-src 'none';
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+">
+
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <!-- Google Fonts: Raleway -->
@@ -28,7 +40,7 @@
       ],
       [
         "link" => "manpower.php",
-        "bgImage" => "images/33.png",
+        "bgImage" => "images/3.png",
         "overlayImage" => "images/5.png",
         "title" => "Manpower",
         "desc" => "Skilled hands. Strong Workforce. On Demand."
