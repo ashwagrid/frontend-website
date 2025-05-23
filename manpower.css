@@ -5,14 +5,34 @@
   box-sizing: border-box;
 }
 
-body{
+body {
+  min-height: 850px; /* ensures body takes full viewport height */
+  height: auto;
   font-family: 'Raleway', sans-serif;
   width: 100%;
   overflow-x: hidden;
-  padding-left: 40px;   /* add horizontal padding */
+  padding-left: 40px;
   padding-right: 40px;
 }
 
+/* Adjust minimum height for smaller screens */
+@media (max-width: 1200px) {
+  body {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    min-height: 60vh;
+  }
+}
 
 header {
   display: flex;
@@ -75,9 +95,57 @@ nav ul li a.active {
 .hero {
   position: relative;
   width: 100%;
-  height: 870px;
+  min-height: 600px;  /* fallback for larger screens */
+  height: auto;
   overflow: hidden;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 40px 0; /* add space above/below */
+  }
+
+  .overlay {
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 1.8rem;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.3rem;
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 .hero-img {
@@ -111,19 +179,19 @@ nav ul li a.active {
 
 .hero-text {
   color: #fff;
-  font-size: 90px;
+  font-size: clamp(2rem, 6vw, 90px); /* fluid font sizing */
   max-width: 1000px;
-  height: 500px;
   text-align: right;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;   /* Push buttons to bottom */
+  justify-content: flex-end;
   align-items: flex-end;
-   padding: 0 20px 40px 20px;  
+  padding: 0 10px 20px 10px;
   box-sizing: border-box;
-  gap: 60px;                   /* space between text and buttons */
+  gap: 20px; /* fluid gap */
 }
+
 .buttons {
   display: flex;
   gap: 30px;
@@ -173,6 +241,7 @@ nav ul li a.active {
     text-align: center;
     align-items: center;
     gap: 20px;
+    padding: 0 10px;
   }
 
   .buttons {
@@ -194,7 +263,6 @@ nav ul li a.active {
     gap: 16px;
   }
 }
-
 /* CSS FOR WHO.PHP PAGE  *************************************************************************************** */
 .highlight-section {
       background-color: #f1f1f1; /* Change this color as needed */
@@ -236,20 +304,37 @@ nav ul li a.active {
       margin-left: 30%;
     }
 
-    .hero-images1 {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.hero-images1 {
+  display: flex;
+  justify-content: center;       /* center images horizontally */
+  flex-wrap: wrap;               /* allow wrapping on smaller screens */
+  gap: 15px;                    /* consistent space between images */
+  margin: 0 auto;               /* center container itself */
+  max-width: 100%;              /* prevent overflow */
+  box-sizing: border-box;
+}
 
-    .hero-images1 img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+.hero-images1 img {
+  flex: 0 1 200px;              /* don't grow, shrink if needed, basis 200px */
+  max-width: 100%;              /* image width respects container */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+@media (max-width: 480px) {
+  .hero-images1 {
+    gap: 10px;
+  }
+  
+  .hero-images1 img {
+    flex: 1 1 100%;            /* images take full row width */
+    max-width: 100%;           /* prevent overflow */
+    height: auto;              /* auto height for natural aspect */
+  }
+}
+
 .hero-images1 img:hover {
   transform: scale(1.1);
   opacity: 0.9;

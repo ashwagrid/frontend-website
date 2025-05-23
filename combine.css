@@ -4,9 +4,32 @@
   box-sizing: border-box;
 }
 
-body, html {
+body {
+  min-height: 850px;
+  height: auto;
   font-family: 'Raleway', sans-serif;
-  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    min-height: 60vh;
+  }
 }
 
 header {
@@ -28,15 +51,15 @@ header {
   width: auto;
   object-fit: contain;
 }
+
 .dropdown {
   padding: 14px 20px;
   font-size: 16px;
   border: none;
   border-radius: 28px;
   background-color: #f0f0f0;
-  color: #222;
+  color: #000;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='32' viewBox='0 0 24 24' width='32' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 18px center;
@@ -55,4 +78,210 @@ nav ul li a {
   text-decoration: none;
   color: #000;
   font-weight: bold;
+}
+nav ul li a:hover {
+  color: #e9601d;
+  transition: color 0.3s ease;
+}
+
+nav ul li a.active {
+  color: #e9601d;
+  font-weight: bold;
+}
+
+
+.steps-section {
+  background-color: #1c2541;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+  height: auto;
+}
+
+.steps-section h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .steps-section h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.steps-section h1 span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.slide-from-right {
+  animation: slideFromRight 2.5s ease-out forwards;
+  animation-delay: 0s;
+}
+
+.slide-from-left {
+  animation: slideFromLeft 2.5s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.step {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.step.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.step-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.step img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.step-label {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 0px 12px;
+  border-radius: 20px;
+}
+.step, .step-label, .highlight {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.step .highlight {
+  color: #ff5722;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.8rem;
+  white-space: normal; /* allow wrapping */
+  min-height: 50px;    /* enough height for multiline text */
+}
+
+.highlight {
+  white-space: nowrap; /* no wrapping */
+  min-height: 48px; /* to prevent layout jump */
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-right: 100px;
+  padding-top: 40px;
+}
+
+.btn {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 90px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e64a19;
+}
+.steps-wrapper {
+  position: relative;  /* add this if not present */
+  margin-top: 60px;
+  padding-bottom: 50px; /* space for dots */
+}
+
+
+.steps-container {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 2;
+}
+
+.steps-wrapper {
+  position: relative; /* ensure relative for absolute children */
+}
+
+/* dotted line base styles */
+.dotted-line {
+  position: absolute;
+  top: 45%; /* vertical center relative to step images */
+  height: 3px;
+  border-top: 3px dotted white;
+  width: 0;       /* start hidden */
+  opacity: 0;
+  transition: width 1.5s ease, opacity 0.8s ease;
+  z-index: 1;
+}
+
+/* position the lines to start from step 1 and step 2 */
+.line1 {
+  left: 20%;  /* adjust for your layout */
+}
+
+.line2 {
+  left: 55%; /* adjust for your layout */
+}
+
+/* class to activate the line animation */
+.dotted-line.active {
+  width: 25%;  /* line length */
+  opacity: 1;
 }

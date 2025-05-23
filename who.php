@@ -26,18 +26,29 @@
   <header>
     <div class="logo">
       <img src="images/ashwa.png" alt="ASHWAGRID Logo">
-      <select class="dropdown">
-         <option value="" selected disabled hidden>Choose Service</option>
-        <option>MOBALITY</option>
-        <option>MANPOWER</option>
+      <select class="dropdown"  id="redirectDropdown" onchange="redirectPage()">
+        <option value="" selected disabled hidden>Choose Service</option>
+        <option value="">MOBILITY</option>
+        <option value="manpower.php">MANPOWER</option>
       </select>
     </div>
+    <script>
+  function redirectPage() {
+    var dropdown = document.getElementById("redirectDropdown");
+    var selectedValue = dropdown.value;
+
+    if (selectedValue) {
+      window.location.href = selectedValue;
+    }
+  }
+</script>
+
     <!-- NAVIGATION BAR  -->
     <nav>
       <ul>
         <li><a href="manpower.php" >Home</a></li>
         <li><a href="who.php" class= "active">Who Are We</a></li>
-        <li><a href="join.php">Access The Grid</a></li>
+        <li><a href="AccessTheGrid.php">Access The Grid</a></li>
         <li><a href="#">Join The Grid</a></li>
         <li><a href="#">CV Maker</a></li>
         <li><a href="#">FAQ</a></li>
