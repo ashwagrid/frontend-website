@@ -89,7 +89,7 @@ const stepsData = [
   { highlightText: ["Start Service", "Quickly"] },
 ];
 
-async function typeText(element, lines, delay = 70) {
+async function typeText(element, lines, delay = 10) {
   element.innerHTML = ""; // clear for <br> support
 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {

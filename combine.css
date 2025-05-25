@@ -1,4 +1,4 @@
-* {
+* { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -147,13 +147,13 @@ nav ul li a.active {
 }
 
 .slide-from-right {
-  animation: slideFromRight 2.5s ease-out forwards;
+  animation: slideFromRight 0.8s ease-out forwards;
   animation-delay: 0s;
 }
 
 .slide-from-left {
-  animation: slideFromLeft 2.5s ease-out forwards;
-  animation-delay: 0.6s;
+  animation: slideFromLeft 0.8s ease-out forwards;
+  animation-delay: 0s;
 }
 
 .steps-container {
@@ -239,7 +239,8 @@ nav ul li a.active {
 }
 
 .btn:hover {
-  background-color: #e64a19;
+  background-color: white;
+  color: #ff5722;
 }
 .steps-wrapper {
   position: relative;  /* add this if not present */
@@ -284,4 +285,104 @@ nav ul li a.active {
 .dotted-line.active {
   width: 25%;  /* line length */
   opacity: 1;
+}
+
+/* Responsive Queries */
+@media (max-width: 1200px) {
+  body {
+    min-height: 70vh;
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 16px 60px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .buttons {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .steps-section h1 {
+    font-size: 40px;
+  }
+
+  .step-label {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    min-height: 60vh;
+  }
+
+  .steps-section h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .step .highlight {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 14px 50px;
+    font-size: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    min-height: 50vh;
+    padding: 10px;
+  }
+
+  .steps-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .step-label {
+    font-size: 1.2rem;
+  }
+
+  .step .highlight {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 12px 40px;
+    font-size: 15px;
+  }
+
+  .dropdown {
+    font-size: 14px;
+    padding: 12px 18px;
+    padding-right: 50px;
+    background-size: 24px;
+  }
 }
