@@ -18,7 +18,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - PeopleOps Grid</title>
+  <title>ASHWAGRID - About </title>
   <link rel="stylesheet" href="manpower.css">   
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -47,12 +47,12 @@
     <nav>
       <ul>
         <li><a href="manpower.php" >Home</a></li>
-        <li><a href="who.php" class= "active">Who Are We</a></li>
+        <li><a href="who.php">Who Are We</a></li>
         <li><a href="AccessTheGrid.php">Access The Grid</a></li>
-        <li><a href="#">Join The Grid</a></li>
+        <li><a href="joinTheGrid.php">Join The Grid</a></li>
         <li><a href="#">CV Maker</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="FAQ.php" class="active">FAQ</a></li>
+        <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
   </header>
