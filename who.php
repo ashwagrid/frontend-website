@@ -47,11 +47,11 @@
     <nav>
       <ul>
         <li><a href="manpower.php" >Home</a></li>
-        <li><a href="who.php">Who Are We</a></li>
+        <li><a href="who.php"  class="active ">Who Are We</a></li>
         <li><a href="AccessTheGrid.php">Access The Grid</a></li>
         <li><a href="joinTheGrid.php">Join The Grid</a></li>
         <li><a href="#">CV Maker</a></li>
-        <li><a href="FAQ.php" class="active">FAQ</a></li>
+        <li><a href="FAQ.php">FAQ</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
@@ -62,11 +62,9 @@
       <h1><span class="slide-in blue">Driven by Purpose,</span></h1><br>
       <h1><span class="slide-in orange delay">Defined by Service.</span></h1>
       <br>
-      <p>
-       AshwaGrid is a next- generation manpower and mobility solutions providers. We specialize in connecting skilled <br>
-       drivers and manpower with businesses and individuals across cities. With a strong focus on safety,<br>
-        professionalism, and convenience, we ensure every ride and recruitment is reliable.
-      </p>
+      <p>AshwaGrid is a next- generation manpower and mobility solutions providers. We specialize in connecting skilled <br>
+      drivers and manpower with businesses and individuals across cities. With a strong focus on safety,<br>
+       professionalism, and convenience, we ensure every ride and recruitment is reliable.      </p>
       <br>
     </div>
     <div class="hero-images1">
@@ -77,5 +75,36 @@
       <img src="images/11.png" alt="Image 5">
     </div>
   </section>
+  <footer>
+    <div class="footer-column footer-logo">
+      <img src="images/ashwa.png" alt="Ashwagrid Logo">
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Who Are We</a>
+      <a href="#">Access The Grid</a>
+      <a href="#">Join The Grid</a>
+    </div>
+    <div class="footer-column">
+      <h4>Cities We Offer</h4>
+      <a href="#">Mumbai</a>
+      <a href="#">Pune</a>
+      <a href="#">Nashik</a>
+      <a href="#">Nagpur</a>
+      <a href="#">Goa</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Info</h4>
+      <a href="#"><strong>+91 4636537657</strong></a>
+      <a href="#">Ashwagrid@gmail.com</a>
+      <a href="#">xyz, office no. xx, Navi Mumbaio</a>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

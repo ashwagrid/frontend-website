@@ -38,7 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 15px 40px 15px 2px;
   background: #fff;
 }
 @media (max-width: 768px) {
@@ -564,3 +564,41 @@ nav ul li a.active {
   background-color: #06132f;
 }
 
+/* FPOTER SECTION **************************************************************************************** */
+footer {
+  margin-top: 50px;
+  background-color: #162040;
+  color: #fff;
+  padding: 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px 10px 0 0;
+  gap: 20px;
+}
+
+/* LOGO takes 40%, never shrinks below 300px */
+.footer-logo {
+  flex: 0 0 40%;
+  min-width: 300px;
+}
+
+.footer-logo img {
+  height: 80px;
+}
+
+/* Each footer column takes equal portion of remaining 60% */
+.footer-column {
+  flex: 1 1 20%;
+  min-width: 160px;
+  max-width: 220px;
+}
+
+/* Optional: wrap footer in a max-width container for center alignment */
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

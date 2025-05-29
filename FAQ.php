@@ -65,31 +65,31 @@
         <!-- Left: FAQ List -->
         <div class="faq-list">
           <div class="faq-item">
-            <div class="question"><span class="arrow">&gt;</span> What types of services does AshwaGrid provide?</div>
-            <div class="answer">AshwaGrid offers mobility services (chauffeur-driven vehicles,<br> pickup-drop, intercity rides) and manpower services (drivers,<br> electricians, security guards, housekeeping staff, and more).</div>
+            <div class="question"><span class="arrow">&gt;</span> How can I apply for a job at AshwaGrid?</div>
+            <div class="answer">Go to “Join the Grid” and fill in your details. <br>Our team will contact you for further steps and verification.</div>
           </div>
 
           <div class="faq-item">
-            <div class="question"><span class="arrow">&gt;</span> How can I request a driver or manpower?</div>
-            <div class="answer">You can request services by accessing the portal via “Access the Grid” and selecting the relevant options.</div>
+            <div class="question"><span class="arrow">&gt;</span> What kind of jobs are available? </div>
+            <div class="answer">We offer jobs for drivers, housekeeping staff, <br>electricians, plumbers, security personnel, and more.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="question"><span class="arrow">&gt;</span> Do I need a resume or CV to apply?</div>
+            <div class="answer">No worries! <br> You can create a professional CV using our free CV Maker - even if you're not applying right now.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="question"><span class="arrow">&gt;</span> Will I get a permanent job?</div>
+            <div class="answer"> Job type depends on client needs - we offer full-time,<br> part-time, and on-demand work options</div>
           </div>
 
           <div class="faq-item">
             <div class="question"><span class="arrow">&gt;</span> Do I have to pay any fees to join?</div>
-            <div class="answer">No, joining AshwaGrid is completely free for candidates. Employers may have service charges.</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question"><span class="arrow">&gt;</span> How can I apply for a job at AshwaGrid?</div>
-            <div class="answer">Go to “Join the Grid” and fill out the application form. Our team will contact you if shortlisted.</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question"><span class="arrow">&gt;</span> In which cities do you operate?</div>
-            <div class="answer">AshwaGrid currently operates in major metropolitan areas and is expanding nationwide.</div>
+            <div class="answer">No. <br>Joining AshwaGrid is completely free for all job seekers.</div>
           </div>
         </div>
-
+         
         <!-- Right: Logo -->
         <div class="faq-logo">
           <img src="images/16.png" alt="FAQ Logo">
@@ -137,6 +137,36 @@
       });
     }
   </script>
-
+<footer>
+    <div class="footer-column footer-logo">
+      <img src="images/ashwa.png" alt="Ashwagrid Logo">
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Who Are We</a>
+      <a href="#">Access The Grid</a>
+      <a href="#">Join The Grid</a>
+    </div>
+    <div class="footer-column">
+      <h4>Cities We Offer</h4>
+      <a href="#">Mumbai</a>
+      <a href="#">Pune</a>
+      <a href="#">Nashik</a>
+      <a href="#">Nagpur</a>
+      <a href="#">Goa</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Info</h4>
+      <a href="#"><strong>+91 4636537657</strong></a>
+      <a href="#">Ashwagrid@gmail.com</a>
+      <a href="#">xyz, office no. xx, Navi Mumbaio</a>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

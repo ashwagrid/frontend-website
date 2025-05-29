@@ -72,5 +72,37 @@
   </section>
   <!-- HERO SECTION ENDED -->
    <script src="script.js"></script>
+   
+   <footer>
+    <div class="footer-column footer-logo">
+      <img src="images/ashwa.png" alt="Ashwagrid Logo">
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Who Are We</a>
+      <a href="#">Access The Grid</a>
+      <a href="#">Join The Grid</a>
+    </div>
+    <div class="footer-column">
+      <h4>Cities We Offer</h4>
+      <a href="#">Mumbai</a>
+      <a href="#">Pune</a>
+      <a href="#">Nashik</a>
+      <a href="#">Nagpur</a>
+      <a href="#">Goa</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact Info</h4>
+      <a href="#"><strong>+91 4636537657</strong></a>
+      <a href="#">Ashwagrid@gmail.com</a>
+      <a href="#">xyz, office no. xx, Navi Mumbaio</a>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
