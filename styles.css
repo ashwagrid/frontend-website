@@ -250,3 +250,64 @@ a.card.hovered .btn {
   background-color: #d9541c;
 }
 
+/* FPOTER SECTION **************************************************************************************** */
+footer {
+  width: 100%;
+  background-color: #162040;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px 10px 0 0;
+  margin: 90px 5px 25px 5px ;
+}
+.footer-logo {
+  justify-content: flex-start;
+  flex: 1;
+  margin-top: 40px;
+  margin-right: 90px;
+  width: 250px;
+}
+.footer-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-column {
+  gap: 10px;
+  justify-content: flex-end;
+  flex: 0.5;
+  margin: 10px 20px;
+}
+
+.footer-column h4 {
+  color: #ff6533;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 6px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-icons img {
+  height: 50px; /* smaller size as in your image */
+  width: 50px;
+  padding: 0; /* remove padding that was making them look big */
+}

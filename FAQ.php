@@ -138,15 +138,15 @@
     }
   </script>
 <footer>
-    <div class="footer-column footer-logo">
+    <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
     </div>
     <div class="footer-column">
       <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#">Who Are We</a>
-      <a href="#">Access The Grid</a>
-      <a href="#">Join The Grid</a>
+      <a href="manpower.php">Home</a>
+      <a href="who.php">Who Are We</a>
+      <a href="AccessTheGrid.php">Access The Grid</a>
+      <a href="joinTheGrid.php">Join The Grid</a>
     </div>
     <div class="footer-column">
       <h4>Cities We Offer</h4>
@@ -158,14 +158,14 @@
     </div>
     <div class="footer-column">
       <h4>Contact Info</h4>
-      <a href="#"><strong>+91 4636537657</strong></a>
-      <a href="#">Ashwagrid@gmail.com</a>
-      <a href="#">xyz, office no. xx, Navi Mumbaio</a>
+      <a><strong>+91 4636537657</strong></a><br>
+      <a>Ashwagrid@gmail.com</a><br>
+      <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
+  <a href="#"><img src="images/facebook.png" alt="facebook"></a>
+  <a href="#"><img src="images/insta.png" alt="instagram"></a>
+  <a href="#"><img src="images/email.png" alt="email"></a>
+</div>
     </div>
   </footer>
 </body>
