@@ -5,30 +5,30 @@
 }
 
 body {
-  height: 850px;
-  height: auto;
+  max-height: 90vh; /* ensures body takes full viewport height */
+  height: 800px;
   font-family: 'Raleway', sans-serif;
   width: 100%;
   overflow-x: hidden;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-
+/* Adjust minimum height for smaller screens */
 @media (max-width: 1200px) {
-  body {
-    min-height: 80vh;
-  }
-}
-
-@media (max-width: 768px) {
   body {
     min-height: 70vh;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   body {
     min-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    min-height: 50vh;
   }
 }
 
@@ -38,7 +38,59 @@ header {
   align-items: center;
   padding: 15px 40px 15px 2px;
   background: #fff;
-  margin-left: 0;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .dropdown {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .dropdown {
+    font-size: 14px;
+    padding: 10px 16px;
+    background-position: right 12px center;
+    padding-right: 44px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
 }
 
 .logo {
@@ -59,7 +111,7 @@ header {
   border: none;
   border-radius: 28px;
   background-color: #f0f0f0;
-  color: #000;
+  color: #222;
   font-weight: 600;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23000' height='32' viewBox='0 0 24 24' width='32' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
@@ -90,7 +142,7 @@ nav ul li a.active {
   font-weight: bold;
 }
 
-
+/* CSS FOR ACCESS THE GRID PAGE ******************************************************************* */
 .steps-section {
   background-color: #1c2541;
   color: white;
@@ -104,20 +156,6 @@ nav ul li a.active {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-  .steps-section h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .steps-section h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
 }
 
 @keyframes slideFromRight {
@@ -237,6 +275,7 @@ nav ul li a.active {
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -290,30 +329,8 @@ nav ul li a.active {
 
 /* Responsive Queries */
 @media (max-width: 1200px) {
-  body {
-    min-height: 70vh;
-    padding: 20px;
-  }
-
-  .btn {
-    padding: 16px 60px;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 992px) {
-  header {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .buttons {
-    justify-content: center;
-    padding-right: 0;
-  }
-
   .steps-section h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .step-label {
@@ -321,14 +338,9 @@ nav ul li a.active {
   }
 }
 
-@media (max-width: 768px) {
-  body {
-    min-height: 60vh;
-  }
-
+@media (max-width: 992px) {
   .steps-section h1 {
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 36px;
   }
 
   .step .highlight {
@@ -336,35 +348,50 @@ nav ul li a.active {
   }
 
   .btn {
-    padding: 14px 50px;
-    font-size: 16px;
+    padding: 16px 50px;
+    font-size: 18px;
   }
 
-  .buttons {
+  .line1 {
+    left: 20%;
+  }
+
+  .line2 {
+    left: 55%;
+  }
+
+  .dotted-line.active {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-container {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 
-  .logo {
-    justify-content: center;
+  .step {
+    width: 90%;
   }
 
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
+  .line1, .line2 {
+    display: none;
+  }
+
+  .steps-section h1 {
+    font-size: 30px;
+  }
+
+  .btn {
+    padding: 14px 40px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  body {
-    min-height: 50vh;
-    padding: 10px;
-  }
-
   .steps-section h1 {
     font-size: 24px;
-    margin-bottom: 20px;
   }
 
   .step-label {
@@ -372,29 +399,21 @@ nav ul li a.active {
   }
 
   .step .highlight {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .btn {
-    padding: 12px 40px;
+    padding: 12px 30px;
     font-size: 15px;
   }
-
-  .dropdown {
-    font-size: 14px;
-    padding: 12px 18px;
-    padding-right: 50px;
-    background-size: 24px;
-  }
 }
-/* CSS FOR FAQ.PHP PAGE************************************************************** */
 
-/* Hero Section */
+
+/* CSS FOR FAQ.PHP PAGE************************************************************** */
 .container {
-  height: 800px;
-  max-height: 90vh;
+  height: auto;
   width: 100%;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: 12px;
   background-color: #f1f1f1;
   position: relative;
@@ -406,7 +425,7 @@ nav ul li a.active {
 }
 
 .hello-text h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -424,7 +443,7 @@ nav ul li a.active {
 
 .search-bar input[type="text"] {
   width: 100%;
-  padding: 12px 120px 12px 20px; /* right padding for button */
+  padding: 12px 120px 12px 20px;
   border-radius: 50px;
   border: 1px solid #f1f1f1;
   font-size: 1rem;
@@ -447,13 +466,10 @@ nav ul li a.active {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-
 /* FAQ Section */
 .faq-section {
-  max-width: 100%;
-  margin-left:0;
-  padding: 0px;
-  height: 800px;
+  width: 100%;
+  padding: 0;
 }
 
 .faq-section h2 {
@@ -461,6 +477,18 @@ nav ul li a.active {
   font-weight: 700;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.faq-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.faq-list {
+  flex: 2 1 60%;
+  min-width: 250px;
 }
 
 .faq-item {
@@ -473,20 +501,20 @@ nav ul li a.active {
 .faq-item .question {
   display: flex;
   align-items: center;
-  gap: 12px; /* spacing between arrow and text */
+  gap: 12px;
   font-size: 1.3rem;
   font-weight: 200;
 }
+
 .arrow {
-  font-size: 1.4rem; /* Make it bold and slightly bigger */
+  font-size: 1.4rem;
   font-weight: 500;
   transition: transform 0.3s ease;
-  color: #d8d8d8; /* Optional: match brand color */
+  color: #d8d8d8;
 }
 
-
 .faq-item.open .arrow {
-  transform: rotate(90deg); /* Will point down when open */
+  transform: rotate(90deg);
 }
 
 .answer {
@@ -494,9 +522,8 @@ nav ul li a.active {
   overflow: hidden;
   opacity: 0;
   transition: all 0.4s ease;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  color:#ff6533;
+  font-size: 1.2rem;
+  color: #ff6533;
 }
 
 .faq-item.open .answer {
@@ -504,47 +531,25 @@ nav ul li a.active {
   opacity: 1;
   margin-top: 10px;
 }
-.faq-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.faq-list {
-  flex: 2;
-  min-width: 200px;
-  padding-right: 0px; /* optional: space between border and content */
-}
 
 .faq-logo {
-  flex: 1;
+  flex: 1 1 40%;
   display: flex;
   justify-content: flex-end;
-  align-items: top;
+  align-items: start;
 }
 
 .faq-logo img {
-  width: 1200px;
-  max-width: 100vh;
+  width: 100%;
+  max-width: 400px;
   height: auto;
+  object-fit: contain;
 }
 
+/* ================== MEDIA QUERIES ================== */
 
+/* Small Devices */
 @media (max-width: 480px) {
-  /* General Padding Adjustments */
-  body {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  /* Hero Section */
-  .container {
-    height: auto;
-    padding: 20px 10px;
-  }
-
   .hello-text h1 {
     font-size: 2rem;
     line-height: 1.2;
@@ -552,7 +557,7 @@ nav ul li a.active {
 
   .search-bar input[type="text"] {
     padding: 10px 50px 10px 12px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .search-bar button {
@@ -560,7 +565,6 @@ nav ul li a.active {
     font-size: 0.85rem;
   }
 
-  /* FAQ Layout */
   .faq-wrapper {
     flex-direction: column;
     gap: 20px;
@@ -571,14 +575,7 @@ nav ul li a.active {
   }
 
   .faq-logo img {
-    width: 100%;
     max-width: 280px;
-    height: auto;
-  }
-
-  .faq-section {
-    height: auto;
-    padding: 20px 0;
   }
 
   .faq-item .question {
@@ -586,68 +583,70 @@ nav ul li a.active {
   }
 
   .answer {
-    font-size: 0.9rem;
-  }
-
-  /* Button Fixes */
-  .btn {
-    padding: 10px 30px;
-    font-size: 0.9rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  .buttons {
-    padding-top: 20px;
-    padding-right: 0;
-    gap: 16px;
-  }
-
-  /* Steps section responsiveness */
-  .steps-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .step-label {
-    font-size: 1rem;
-  }
-
-  .step .highlight {
-    font-size: 0.9rem;
-  }
-
-  /* Header responsiveness */
-  header {
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .dropdown {
-    font-size: 0.9rem;
-    background-size: 20px;
-    padding: 10px 40px 10px 14px;
+    font-size: 0.95rem;
   }
 }
- /* CSS FOR CONTACT.PHP ************************************************************************ */
+
+/* Tablets and Medium Screens (Nest Hub, etc.) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .hello-text h1 {
+    font-size: 3rem;
+  }
+
+  .faq-wrapper {
+    flex-direction: column;
+  }
+
+  .faq-logo {
+    justify-content: center;
+  }
+
+  .faq-logo img {
+    max-width: 500px;
+  }
+
+  .faq-item .question {
+    font-size: 1.1rem;
+  }
+
+  .answer {
+    font-size: 1rem;
+  }
+}
+
+/* Large Screens / Nest Hub Max (1280px and above) */
+@media (min-width: 1200px) {
+  .faq-wrapper {
+    flex-wrap: nowrap; /* prevent stacking */
+  }
+
+  .faq-list {
+    flex: 0 0 60%;
+    min-width: 250px;
+  }
+
+  .faq-logo {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .faq-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+  /* CSS FOR CONTACT.PHP ************************************************************************ */
 
  .contact-wrapper {
   display: flex;
- align-items: space-between;
- gap: 30px;
+  justify-content: space-between;
+  gap: 30px;
   max-width: 100%;
-  height: 800px;
+  height: auto;
   max-height: 90vh;
   margin-left: 0;
   color: white;
@@ -663,43 +662,50 @@ nav ul li a.active {
   width: 100%;
   box-sizing: border-box;
 }
-.form-section h2{
+.form-section h2 {
   font-size: 55px;
   font-weight: bold;
 }
 /* Right image */
 .image3 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* or flex-end */
   width: 40%;
   border-radius: 15px;
   overflow: hidden;
-  align-items: center;
-  justify-content: end;
 }
 
+.form-section,
+.image3 {
+  flex-shrink: 1; /* allow shrinking */
+  min-width: 280px; /* don't collapse too small */
+}
 .image3 img {
-  width: 560px;
-  height: 900px;
+  max-width: 100%;
+  height: auto;
   border-radius: 15px;
+  object-fit: contain;
 }
-
 /* Form Inputs */
 .form-group {
-  margin-bottom: 20px;
-  width: 105vh;
+  width: 100%; /* fill container */
+  max-width: 600px; /* optional max */
+  margin-bottom: 15px; /* reduced space */
 }
 
 .form-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 8px;
-  font-size: 30px;
+  margin-bottom: 6px; /* reduced space */
+  font-size: 25px;
 }
 
-.form-group input ,
-.form-group select ,
+.form-group input,
+.form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 19px 19px;
+  padding: 15px 19px; /* reduced padding */
   border-radius: 18px;
   border: none;
   outline: none;
@@ -708,7 +714,10 @@ nav ul li a.active {
   font-size: 15px;
   font-style: italic;
 }
-
+.form-group select option {
+  background-color: white;
+  font-size: 20px;
+}
 .form-group select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg fill='%23fff' viewBox='0 0 20 20'%3E%3Cpath d='M5.25 7.5L10 12.25 14.75 7.5H5.25z'/%3E%3C/svg%3E");
@@ -721,26 +730,24 @@ nav ul li a.active {
 }
 .form-row {
   display: flex;
-  gap: 40px;
-  width: 70vh;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
-
-.form-group.phone input {
-  width: 250px; /* Or whatever you prefer */
-}
-
-.form-group.email {
-  width: 1200px;
+.form-group.phone input,
+.form-group.email input {
+  width: 100%; /* full width on small */
+  max-width: 250px; /* or adjust */
 }
 
 form button {
   display: block;
   margin: 20px auto 0;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 1.3rem;
   font-weight: 500;
   background-color: #fff;
-  color:#1c2541;
+  color: #1c2541;
   border: none;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -748,22 +755,147 @@ form button {
   transition: background-color 0.3s ease;
 }
 
-/* Responsive for mobile */
-@media (max-width: 768px) {
+/* Responsive  */
+@media (max-width: 1400px) {
   .contact-wrapper {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    max-height: none;  /* allow height to shrink */
   }
-
-  .form-section,
-  .image3 {
-    width: 100%;
+  .form-section {
+    width: 60% !important;
+    padding: 15px 20px !important;  /* tighter padding */
+    max-height: none; /* let it grow naturally */
+    overflow: visible; /* no scroll */
   }
-
+  .form-section h2 {
+    font-size: 40px;      /* smaller heading */
+    line-height: 1.1;     /* tighter line height */
+    margin-bottom: 15px;  /* less spacing below title */
+  }
+  .form-group {
+    margin-bottom: 8px !important; /* much less vertical gap */
+  }
+  .form-group label {
+    margin-bottom: 4px !important;
+    font-size: 22px !important;
+    line-height: 1.1;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 15px !important;  /* smaller padding */
+    font-size: 14px !important;
+  }
+  form button {
+    padding: 8px 15px !important;
+    font-size: 1.1rem !important;
+  }
   .image3 {
-    height: 300px;
-    margin-top: 20px;
+    width: 40% !important;
+  }
+  .image3 img {
+    max-height: 75vh; /* keep image reasonable size */
   }
 }
+
+/* Medium screens (tablets, smaller desktops) 993px to 1024px */
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    gap: 15px;
+  }
+  .form-section {
+    width: 60% !important;
+    padding: 20px !important;
+    height: fit-content;
+  }
+  .image3 {
+    width: 50% !important;
+  }
+  .image3 img {
+    max-height: 75vh;
+  }
+}
+
+/* Tablets and smaller desktops 768px to 992px */
+@media (max-width: 992px) {
+  .contact-wrapper {
+    gap: 15px;
+  }
+  .form-section {
+    width: 65% !important;
+    padding: 15px !important;
+  }
+  .image3 {
+    width: 35% !important;
+  }
+  .image3 img {
+    max-height: 70vh;
+  }
+}
+
+/* Smaller tablets and large phones: 480px to 767px */
+@media (max-width: 767px) {
+  .contact-wrapper {
+    gap: 10px;
+  }
+  .form-section {
+    width: 65% !important;
+    padding: 15px !important;
+    min-width: 260px;
+  }
+  .image3 {
+    width: 35% !important;
+    min-width: 240px;
+  }
+  .image3 img {
+    max-height: 55vh;
+  }
+  .form-row {
+    gap: 15px;
+    flex-wrap: wrap; /* wrap inputs if needed */
+  }
+  .form-group.phone input,
+  .form-group.email input {
+    width: 100% !important;
+  }
+  form button {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+
+/* Small phones (up to 479px) */
+@media (max-width: 479px) {
+  .contact-wrapper {
+    gap: 10px;
+  }
+  .form-section {
+    width: 65% !important;
+    padding: 10px !important;
+    min-width: 240px;
+  }
+  .image3 {
+    width: 35% !important;
+    min-width: 220px;
+  }
+  .image3 img {
+    max-height: 50vh;
+  }
+  .form-row {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .form-group.phone input,
+  .form-group.email input {
+    width: 100% !important;
+  }
+  form button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
 
 /* FPOTER SECTION **************************************************************************************** */
 footer {
@@ -826,3 +958,245 @@ footer {
   width: 50px;
   padding: 0; /* remove padding that was making them look big */
 }
+ 
+
+/* Manpower Form Wrapper Section*************************************************************************** */
+.manpowerform-container {
+  height: 800px;
+  display: flex;
+  align-items: top;
+  background-color: #101c3c;
+  border-radius: 15px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #101c3c;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  height: 800px;
+}
+
+.form-left {
+  flex: 4;
+  padding-right: 30px;
+  color: white;
+  justify-content: flex-start;
+}
+
+.form-left h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-left p {
+  font-size: 15px;
+  margin-bottom: 25px;
+  color: white;
+  font-weight: 300;
+}
+
+.input-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 18px 16px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background:white;
+  color: black;
+}
+.small-input {
+  width: 250px; 
+}
+
+select {
+  appearance: none;
+  background: #ffffff;
+  color:black;
+}
+
+textarea {
+  resize: none;
+  margin: 10px 0 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  color: white;
+}
+
+button {
+  background-color: white;
+  color: #101c3c;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+.form-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form-right img {
+  width: 700px;
+  height: 700px;
+  max-height: 90vh;
+  max-width: 1200px;
+}
+.label-row {
+  display: flex;
+  gap:90px;             /* Adjust this value for desired spacing */
+}
+
+.label-row label { 
+  width: 48%;
+  text-align: left;  
+}
+
+/* RESPONSIVENESS******************* */
+@media (min-width: 1280px){
+  .form-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+      }
+     }
+@media (max-width: 1200px) {
+  .form-container {
+    height: 400px;
+    padding: 20px;
+  }
+
+  .form-right img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-left {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .form-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .form-right img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .manpowerform-container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .form-left h1 {
+    font-size: 24px;
+  }
+
+  .form-left p {
+    font-size: 14px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .label-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .label-row label {
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .small-input,
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .form-right img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-left h1 {
+    font-size: 20px;
+  }
+
+  .form-left p {
+    font-size: 12px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+@media (max-width: 400px) {
+  .form-right {
+    display: none;
+  }
+}
+
+/* CSS FOR MOBALITYSERVICE.PHP********************************************************************************************************* */
+

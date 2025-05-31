@@ -1,3 +1,9 @@
+<?php
+// AccessTheGrid.php
+?>
+
+<!-- CSS IN COMBINE.CSS LINE 93******************************************************************** -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,22 +17,22 @@
   <header>
     <div class="logo">
       <img src="images/ashwa.png" alt="ASHWAGRID Logo">
-      <select class="dropdown"  id="redirectDropdown" onchange="redirectPage()">
+      <select class="dropdown" id="redirectDropdown" onchange="redirectPage()">
         <option value="" selected disabled hidden>Choose Service</option>
         <option value="">MOBILITY</option>
         <option value="manpower.php">MANPOWER</option>
       </select>
     </div>
     <script>
-  function redirectPage() {
-    var dropdown = document.getElementById("redirectDropdown");
-    var selectedValue = dropdown.value;
+      function redirectPage() {
+        var dropdown = document.getElementById("redirectDropdown");
+        var selectedValue = dropdown.value;
 
-    if (selectedValue) {
-      window.location.href = selectedValue;
-    }
-  }
-</script>
+        if (selectedValue) {
+          window.location.href = selectedValue;
+        }
+      }
+    </script>
 
     <nav>
       <ul>
@@ -43,105 +49,103 @@
 
   <section class="steps-section">
     <h1>
-  <span class="slide-from-right">Access Our Network</span><br>
-  <span class="slide-from-left">Anytime, Anywhere...</span>
-</h1>
+      <span class="slide-from-right">Access Our Network</span><br>
+      <span class="slide-from-left">Anytime, Anywhere...</span>
+    </h1>
 
     <div class="steps-wrapper">
-    <div class="steps-container">
-      <div class="step">
-        <div class="step-image-wrapper">
-          <img src="images/12.png" alt="Step 1">
-          <p class="step-label">Step 1</p>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-image-wrapper">
+            <img src="images/12.png" alt="Step 1">
+            <p class="step-label">Step 1</p>
+          </div>
+          <p class="highlight"></p>
         </div>
-        <p class="highlight"></p>
-      </div>
 
-      <div class="step">
-        <div class="step-image-wrapper">
-          <img src="images/13.png" alt="Step 2">
-          <p class="step-label">Step 2</p>
+        <div class="step">
+          <div class="step-image-wrapper">
+            <img src="images/13.png" alt="Step 2">
+            <p class="step-label">Step 2</p>
+          </div>
+          <p class="highlight"></p>
         </div>
-        <p class="highlight"></p>
-      </div>
 
-      <div class="step">
-        <div class="step-image-wrapper">
-          <img src="images/14.png" alt="Step 3">
-          <p class="step-label">Step 3</p>
+        <div class="step">
+          <div class="step-image-wrapper">
+            <img src="images/14.png" alt="Step 3">
+            <p class="step-label">Step 3</p>
+          </div>
+          <p class="highlight"></p>
         </div>
-        <p class="highlight"></p>
       </div>
-    </div>
-<div class="dotted-line line1"></div>
-<div class="dotted-line line2"></div>
+      <div class="dotted-line line1"></div>
+      <div class="dotted-line line2"></div>
 
-    <div class="buttons">
-      <button class="btn">Request Manpower</button>
-      <button class="btn">Mobility Service</button>
-      
+      <div class="buttons">
+        <a href="manpowerform.php" class="btn">Request Manpower</a>
+        <a href="#" class="btn">Mobility Service</a>
+      </div>
     </div>
   </section>
+
   <script>
-const stepsData = [
-  { highlightText: ["Submit Your", "Requirement"] },
-  { highlightText: ["Get Matched", "Fast."] },
-  { highlightText: ["Start Service", "Quickly"] },
-];
+    const stepsData = [
+      { highlightText: ["Submit Your", "Requirement"] },
+      { highlightText: ["Get Matched", "Fast."] },
+      { highlightText: ["Start Service", "Quickly"] },
+    ];
 
-async function typeText(element, lines, delay = 10) {
-  element.innerHTML = ""; // clear for <br> support
+    async function typeText(element, lines, delay = 10) {
+      element.innerHTML = "";
 
-  for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
-    const line = lines[lineIndex];
-    for (let i = 0; i < line.length; i++) {
-      element.innerHTML += line.charAt(i);
-      await new Promise(r => setTimeout(r, delay));
-    }
-    if (lineIndex < lines.length - 1) {
-      element.innerHTML += "<br>";
-      await new Promise(r => setTimeout(r, delay));
-    }
-  }
-}
-
-async function showStepsSequentially() {
-  const steps = document.querySelectorAll('.step');
-  const line1 = document.querySelector('.dotted-line.line1');
-  const line2 = document.querySelector('.dotted-line.line2');
-
-  for (let i = 0; i < steps.length; i++) {
-    const step = steps[i];
-    const label = step.querySelector('.step-label');
-    const highlight = step.querySelector('.highlight');
-
-    step.style.opacity = '1';
-    label.style.opacity = '1';
-    highlight.style.opacity = '1';
-
-    await typeText(highlight, stepsData[i].highlightText);
-
-    // Animate dotted lines after step 1 and 2
-    if (i === 0) {
-      line1.classList.add('active');
-      await new Promise(r => setTimeout(r, 1700)); // wait animation finish
-    }
-    else if (i === 1) {
-      line2.classList.add('active');
-      await new Promise(r => setTimeout(r, 1700)); // wait animation finish
+      for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+        const line = lines[lineIndex];
+        for (let i = 0; i < line.length; i++) {
+          element.innerHTML += line.charAt(i);
+          await new Promise(r => setTimeout(r, delay));
+        }
+        if (lineIndex < lines.length - 1) {
+          element.innerHTML += "<br>";
+          await new Promise(r => setTimeout(r, delay));
+        }
+      }
     }
 
-    await new Promise(r => setTimeout(r, 1000)); // pause before next step
-  }
-}
+    async function showStepsSequentially() {
+      const steps = document.querySelectorAll('.step');
+      const line1 = document.querySelector('.dotted-line.line1');
+      const line2 = document.querySelector('.dotted-line.line2');
 
-// Run on page load
-window.onload = () => {
-  showStepsSequentially();
-};
+      for (let i = 0; i < steps.length; i++) {
+        const step = steps[i];
+        const label = step.querySelector('.step-label');
+        const highlight = step.querySelector('.highlight');
 
-</script>
- <footer>
+        step.style.opacity = '1';
+        label.style.opacity = '1';
+        highlight.style.opacity = '1';
+
+        await typeText(highlight, stepsData[i].highlightText);
+
+        if (i === 0) {
+          line1.classList.add('active');
+          await new Promise(r => setTimeout(r, 1700));
+        } else if (i === 1) {
+          line2.classList.add('active');
+          await new Promise(r => setTimeout(r, 1700));
+        }
+
+        await new Promise(r => setTimeout(r, 1000));
+      }
+    }
+
+    window.onload = () => {
+      showStepsSequentially();
+    };
+  </script>
+
+  <footer>
     <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
     </div>
@@ -166,10 +170,10 @@ window.onload = () => {
       <a>Ashwagrid@gmail.com</a><br>
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
-  <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="#"><img src="images/insta.png" alt="instagram"></a>
-  <a href="#"><img src="images/email.png" alt="email"></a>
-</div>
+        <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+        <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+        <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
+      </div>
     </div>
   </footer>
 </body>

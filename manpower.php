@@ -61,8 +61,8 @@
       India's next-gen<br>
       operations</p>
   <div class="buttons">
-    <a href="#" class="btn ">Access The Grid</a>
-    <a href="#" class="btn">Join The Grid</a>
+    <a href="AccessTheGrid.php" class="btn ">Access The Grid</a>
+    <a href="joinTheGrid.php" class="btn">Join The Grid</a>
   </div>
 </div>
 
@@ -98,9 +98,9 @@
       <a>Ashwagrid@gmail.com</a><br>
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
-  <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="#"><img src="images/insta.png" alt="instagram"></a>
-  <a href="#"><img src="images/email.png" alt="email"></a>
+  <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
+  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+  <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
     </div>
   </footer>
