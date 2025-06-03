@@ -35,6 +35,7 @@
       window.location.href = selectedValue;
     }
   }
+
 </script>
 
     <!-- NAVIGATION BAR  -->
@@ -63,6 +64,15 @@
     <img src="images/19.png" alt="Ashwagrid Logo">
   </div>
 </div>
+<div class="blog-search-filter">
+<div class="search-wrapper">
+  <input type="text" id="searchInput" placeholder="Search Blog Posts">
+  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M10 2a8 8 0 105.29 14.29l5 5a1 1 0 001.42-1.42l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+  </svg>
+</div>
+ <button id="filterBtn">🔧 Filters Results</button>
+</div>
 
 
   <!-- Blog Card Grid Section -->
@@ -81,20 +91,60 @@
       </div>
     </div>
 
-    <!-- Row 2: Small Cards -->
-    <div class="blog-row row-small">
-      <div class="blog-card small">
-        <h4>CV Tips</h4>
-        <p>Write a resume that stands out.</p>
-      </div>
-      <div class="blog-card small">
-        <h4>Interview Skills</h4>
-        <p>What hiring managers want to hear.</p>
-      </div>
-      <div class="blog-card small">
-        <h4>Freelance Guide</h4>
-        <p>How to succeed as a remote worker.</p>
-      </div>
+    <!-- Articles Section -->
+<section class="blog-articles">
+  <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+    <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+    <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+    <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+    <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+    <div class="article-card">
+    <div class="article-content">
+      <h3>Article 1</h3>
+      <p class="date">23/4/2025</p>
+      <p class="excerpt">In the 1500s, an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Repeat .article-card as needed -->
+</section>
+
     </div>
   </div>
 </section>

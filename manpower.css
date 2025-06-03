@@ -684,6 +684,7 @@ footer {
   height: auto;
 }
 
+
 .footer-column {
   gap: 10px;
   justify-content: flex-end;
@@ -722,12 +723,126 @@ footer {
   width: 50px;
   padding: 0; /* remove padding that was making them look big */
 }
+.footer-icons img:hover {
+  transform: scale(1.1);
+}
 
 
 /* blogg section ******************************************************************************* */
 
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+    margin: 0;
+     flex: 1;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* right padding for icon */
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: black; /* Black color */
+  pointer-events: none; /* so the input still works under it */
+}
+
+.blog-search-filter {
+  display: flex;
+  gap: 10px;
+  padding: 20px; /* Instead of margin on child items */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f1f1f1;
+  flex-wrap: wrap; /* Added for small screen fallback */
+}
+
+
+.blog-search-filter input {
+  flex: 0.4;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.blog-search-filter button {
+  padding: 12px 18px;
+  font-size: 15px;
+  color: #4b5563;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+   margin: 0;
+}
+
+.blog-articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.article-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+  flex: 1 1 calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card:hover {
+background-color: #f1f1f1;
+}
+
+
+.article-content {
+  padding: 15px;
+}
+
+.article-content h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.article-content .date {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.article-content .excerpt {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.read-more {
+  color: #ff6533;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .blog-combined {
-  background: #f8f9fa;
+  background: #f1f1f1;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -780,6 +895,8 @@ footer {
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   text-align: left;
+  min-width: 100px;
+  min-height: 100px ;
 }
 
 .blog-card.small h4 {
@@ -803,12 +920,16 @@ footer {
 }
 
 .blog-header h1 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-size: 48px;                /* Bigger and more impactful */
+  font-weight: 800;               /* Bolder for emphasis */
   color: white;
+  line-height: 1.4;               /* Nicely spaced */
   text-align: left;
+  max-width: 800px;               /* Controls when it wraps */
+  margin: 0 0 20px 0;             /* Bottom gap only */
+  word-break: break-word;        /* Break long words if needed */
 }
+
 
 .blog-header p {
   font-size: 15px;
@@ -819,13 +940,14 @@ footer {
 
 .blog-header-logo-bg {
   position: absolute;
-  top: 50%;
+  top: 30%;
   right: 40px;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
   opacity: 0.15;
   height: 160px;
   width: auto;
 }
+
 
 .blog-header-logo-bg img {
   height: 160px;
@@ -844,6 +966,182 @@ footer {
 
   .blog-header-logo-bg {
     display: none;
+  }
+}
+/* Base styles already provided, so this focuses on responsive tweaks */
+
+/* Smaller devices (mobile phones, up to 480px) */
+@media (max-width: 480px) {
+  .blog-search-filter {
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px;
+  }
+
+  .blog-search-filter input,
+  .blog-search-filter button {
+    flex: 1 1 100%;
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .blog-articles {
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 10px;
+  }
+
+  .article-card {
+    flex: 1 1 100%;
+  }
+
+  .blog-card.large {
+    flex: 1 1 100%;
+    min-height: auto;
+  }
+
+  .blog-card.large img {
+    height: 200px; /* reduce image height on mobile */
+  }
+
+  .blog-card.large h3 {
+    font-size: 18px;
+    margin: 10px 15px;
+  }
+
+  .blog-card.large p {
+    font-size: 13px;
+    margin: 0 15px 15px;
+  }
+
+  .blog-card.small {
+    flex: 1 1 100%;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .blog-card.small h4 {
+    font-size: 15px;
+  }
+
+  .blog-card.small p {
+    font-size: 13px;
+  }
+
+  .blog-header h1 {
+    font-size: 28px;
+  }
+
+  .blog-header p {
+    font-size: 14px;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .blog-search-filter {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px;
+  }
+
+  .blog-search-filter input {
+    flex: 1 1 60%;
+    font-size: 15px;
+  }
+
+  .blog-search-filter button {
+    flex: 1 1 35%;
+    font-size: 14px;
+  }
+
+  .blog-articles {
+    gap: 15px;
+    margin: 30px 15px;
+  }
+
+  .article-card {
+    flex: 1 1 calc(50% - 15px);
+  }
+
+  .blog-card.large {
+    flex: 1 1 100%;
+    min-height: 350px;
+  }
+
+  .blog-card.large img {
+    height: 250px;
+  }
+
+  .blog-card.small {
+    flex: 1 1 calc(50% - 15px);
+    min-height: 120px;
+  }
+
+  .blog-header h1 {
+    font-size: 36px;
+  }
+
+  .blog-header p {
+    font-size: 14px;
+  }
+
+  .search-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) {
+  .blog-search-filter {
+    flex-wrap: nowrap;
+    margin: 20px auto;
+  }
+
+  .blog-search-filter input {
+    flex: 0.4;
+    font-size: 16px;
+  }
+
+  .blog-search-filter button {
+    flex: 0;
+    font-size: 15px;
+  }
+
+  .blog-articles {
+    gap: 20px;
+    margin: 40px auto;
+  }
+
+  .article-card {
+    flex: 1 1 calc(33.33% - 20px);
+  }
+
+  .blog-card.large {
+    flex: 1 1 calc(50% - 10px);
+    min-height: 400px;
+  }
+
+  .blog-card.large img {
+    height: 300px;
+  }
+
+  .blog-card.small {
+    flex: 1 1 calc(33.33% - 13.33px);
+    min-height: 100px;
+  }
+
+  .blog-header h1 {
+    font-size: 48px;
+  }
+
+  .blog-header p {
+    font-size: 15px;
   }
 }
 
