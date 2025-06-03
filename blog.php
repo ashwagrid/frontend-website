@@ -12,7 +12,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - Join The Grid</title>
+  <title>ASHWAGRID - Blog </title>
   <link rel="stylesheet" href="manpower.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -40,30 +40,66 @@
     <!-- NAVIGATION BAR  -->
     <nav>
       <ul>
-        <li><a href="manpower.php" >Home</a></li>
+        <li><a href="manpower.php">Home</a></li>
         <li><a href="who.php">Who Are We</a></li>
         <li><a href="AccessTheGrid.php">Access The Grid</a></li>
-        <li><a href="joinTheGrid.php" class="active">Join The Grid</a></li>
+        <li><a href="joinTheGrid.php">Join The Grid</a></li>
         <li><a href="#">CV Maker</a></li>
         <li><a href="FAQ.php">FAQ</a></li>
-        <li><a href="blog.php">Blog</a></li>
+        <li><a href="blog.php"  class="active">Blog</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <!-- HERO SECTION -->
-<section class="hero-join">
-  <div class="overlayjoin">
-    <h1>Your Skills,<br>Our Platform...</h1>
-    <h2><em>Looking for stable work as a driver or skilled worker?</em></h2>
-    <p>AshwaGrid is building a trusted network of professionals.<br>
-      Join us to find consistent, fair, and flexible job opportunities across cities.</p>
-    <a href="registerform.php" class="hero-buttonjoin">Register Now</a>
+  <!-- hero section -->
+ <section class="blog-combined">
+ <div class="blog-header">
+  <h1>Insights, Tips & Stories From the Field</h1>
+  <p>
+    Explore helpful resources, job tips, industry trends, and success stories from our workers and partners. <br>
+    Whether you're looking to improve your CV, understand the hiring process, or hear from people like you <br> — our blog is a space to learn and grow.
+  </p>
+  <div class="blog-header-logo-bg">
+    <img src="images/19.png" alt="Ashwagrid Logo">
+  </div>
+</div>
+
+
+  <!-- Blog Card Grid Section -->
+  <div class="blog-grid">
+    <!-- Row 1: Large Cards -->
+    <div class="blog-row row-large">
+      <div class="blog-card large">
+        <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg" alt="Blog 1">
+        <h3>Grow Your Career</h3>
+        <p>Tips and strategies for career development in a modern workforce.</p>
+      </div>
+      <div class="blog-card large">
+        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog 2">
+        <h3>Team Collaboration</h3>
+        <p>How to improve communication and teamwork in hybrid offices.</p>
+      </div>
+    </div>
+
+    <!-- Row 2: Small Cards -->
+    <div class="blog-row row-small">
+      <div class="blog-card small">
+        <h4>CV Tips</h4>
+        <p>Write a resume that stands out.</p>
+      </div>
+      <div class="blog-card small">
+        <h4>Interview Skills</h4>
+        <p>What hiring managers want to hear.</p>
+      </div>
+      <div class="blog-card small">
+        <h4>Freelance Guide</h4>
+        <p>How to succeed as a remote worker.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-  <!-- HERO SECTION ENDED -->
-   <script src="script.js"></script>
+<!-- FOOTER ********************** -->
    <footer>
     <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
@@ -95,5 +131,3 @@
 </div>
     </div>
   </footer>
-</body>
-</html>

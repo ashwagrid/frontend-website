@@ -1,3 +1,5 @@
+<!-- css in cobine.css line 969 -->
+
 <?php
 // Optional: Start session or handle POST here if needed in the future
 ?>
@@ -37,12 +39,13 @@
         <li><a href="joinTheGrid.php">Join The Grid</a></li>
         <li><a href="#">CV Maker</a></li>
         <li><a href="FAQ.php">FAQ</a></li>
+        <li><a href="blog.php">Blog</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="manpowerform-container">
+  <section class="">
     <div class="form-container">
       <div class="form-left">
         <h1>Manpower Request Form</h1>

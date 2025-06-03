@@ -670,7 +670,7 @@ nav ul li a.active {
 .image3 {
   display: flex;
   align-items: center;
-  justify-content: center; /* or flex-end */
+  justify-content: flex-end;
   width: 40%;
   border-radius: 15px;
   overflow: hidden;
@@ -690,7 +690,7 @@ nav ul li a.active {
 /* Form Inputs */
 .form-group {
   width: 100%; /* fill container */
-  max-width: 600px; /* optional max */
+  max-width: 700px; /* optional max */
   margin-bottom: 15px; /* reduced space */
 }
 
@@ -731,13 +731,21 @@ nav ul li a.active {
 .form-row {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-wrap: nowrap;
+  width: 50%;
+}
+
+.form-group.phone {
+  flex: 1; 
+  min-width: 0;
+}
+.form-group.email{
+ flex: 1.5; 
+  min-width: 0;
 }
 .form-group.phone input,
 .form-group.email input {
-  width: 100%; /* full width on small */
-  max-width: 250px; /* or adjust */
+  width: 100%; 
 }
 
 form button {
@@ -773,7 +781,8 @@ form button {
     line-height: 1.1;     /* tighter line height */
     margin-bottom: 15px;  /* less spacing below title */
   }
-  .form-group {
+  .form-group,
+  .form-row{
     margin-bottom: 8px !important; /* much less vertical gap */
   }
   .form-group label {
@@ -795,7 +804,7 @@ form button {
     width: 40% !important;
   }
   .image3 img {
-    max-height: 75vh; /* keep image reasonable size */
+    max-height: 100vh; /* keep image reasonable size */
   }
 }
 
@@ -853,12 +862,9 @@ form button {
   }
   .form-row {
     gap: 15px;
-    flex-wrap: wrap; /* wrap inputs if needed */
+   
   }
-  .form-group.phone input,
-  .form-group.email input {
-    width: 100% !important;
-  }
+
   form button {
     font-size: 1.1rem;
     padding: 12px;
@@ -958,15 +964,18 @@ footer {
   width: 50px;
   padding: 0; /* remove padding that was making them look big */
 }
- 
+
 
 /* Manpower Form Wrapper Section*************************************************************************** */
 .manpowerform-container {
   height: 800px;
   display: flex;
-  align-items: top;
+  align-items: flex-start;  /* changed from 'top' to 'flex-start' */
   background-color: #101c3c;
   border-radius: 15px;
+  transform-origin: top left;  /* Important for scaling */
+  width: 100%;
+  overflow-x: auto;  /* Allow horizontal scroll if needed */
 }
 
 .form-container {
@@ -977,14 +986,25 @@ footer {
   padding: 20px;
   width: 100%;
   height: 800px;
+  box-sizing: border-box;
 }
-
 .form-left {
-  flex: 4;
+  flex: 1 1 65%;  /* grow, shrink, base 65% */
   padding-right: 30px;
   color: white;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
 }
+
+.form-right {
+  flex: 1 1 35%;  /* grow, shrink, base 35% */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 35%;
+}
+
 
 .form-left h1 {
   font-size: 40px;
@@ -1005,26 +1025,26 @@ footer {
   margin-bottom: 20px;
 }
 
-input,
-select,
-textarea {
+input, select, textarea {
   width: 100%;
   padding: 18px 16px;
   border-radius: 15px;
   border: none;
   outline: none;
   font-size: 18px;
-  background:white;
+  background: white;
   color: black;
+  box-sizing: border-box;
 }
+
 .small-input {
-  width: 250px; 
+  width: 250px;
 }
 
 select {
   appearance: none;
   background: #ffffff;
-  color:black;
+  color: black;
 }
 
 textarea {
@@ -1056,147 +1076,52 @@ button:hover {
   background-color: #f0f0f0;
 }
 
-.form-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.form-right img {
+  width: clamp(150px, 100%, 700px);
+  height: auto;
+  object-fit: contain;
+  max-height: 90vh;
 }
 
-.form-right img {
-  width: 700px;
-  height: 700px;
-  max-height: 90vh;
-  max-width: 1200px;
-}
+
+
 .label-row {
   display: flex;
-  gap:90px;             /* Adjust this value for desired spacing */
+  gap: 90px; /* Adjust this for spacing */
 }
 
-.label-row label { 
+.label-row label {
   width: 48%;
-  text-align: left;  
+  text-align: left;
 }
 
-/* RESPONSIVENESS******************* */
-@media (min-width: 1280px){
-  .form-container {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-      }
-     }
+/* RESPONSIVE SCALING */
 @media (max-width: 1200px) {
-  .form-container {
-    height: 400px;
-    padding: 20px;
-  }
-
-  .form-right img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
+  .manpowerform-container {
+    transform: scale(0.9);
   }
 }
 
 @media (max-width: 992px) {
-  .form-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form-left {
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .form-right {
-    width: 100%;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .form-right img {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
+  .manpowerform-container {
+    transform: scale(0.8);
   }
 }
 
 @media (max-width: 768px) {
   .manpowerform-container {
-    height: auto;
-    padding: 20px;
+    transform: scale(0.7);
   }
+}
 
-  .form-left h1 {
-    font-size: 24px;
-  }
-
-  .form-left p {
-    font-size: 14px;
-  }
-
-  .input-row {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .label-row {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .label-row label {
-    width: 100%;
-    margin-bottom: 2px;
-  }
-
-  .small-input,
-  input,
-  select,
-  textarea {
-    width: 100%;
-  }
-
-  button {
-    width: 100%;
-    font-size: 15px;
-  }
-
-  .form-right img {
-    max-width: 90%;
-    height: auto;
+@media (max-width: 600px) {
+  .manpowerform-container {
+    transform: scale(0.6);
   }
 }
 
 @media (max-width: 480px) {
-  .form-left h1 {
-    font-size: 20px;
-  }
-
-  .form-left p {
-    font-size: 12px;
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 15px;
-    padding: 14px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 10px 18px;
+  .manpowerform-container {
+    transform: scale(0.55);
   }
 }
-@media (max-width: 400px) {
-  .form-right {
-    display: none;
-  }
-}
-
-/* CSS FOR MOBALITYSERVICE.PHP********************************************************************************************************* */
-
