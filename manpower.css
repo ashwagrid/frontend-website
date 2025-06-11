@@ -1306,3 +1306,148 @@ button:hover {
         height: auto;
     }
 }
+
+/* CV maker section ******************************************************************************************************** */
+.cvmaker {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: clamp(500px, 70vh, 800px); /* responsive height */
+  height: auto;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+
+.cvmaker-text,
+.cvmaker-logo {
+  flex: 1 1 100%; /* 100% on small screens, 50% on large */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .cvmaker-text,
+  .cvmaker-logo {
+    flex: 1 1 50%;
+  }
+}
+
+.cvmaker-text {
+  color: #222;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.6;
+  text-align: left;
+  justify-content: space-between;
+  /* Reduce margin to prevent excessive height */
+  margin: clamp(1.5rem, 2vh, 3rem) auto;
+}
+
+.left-content {
+  flex-grow: 1;
+}
+
+.left-content h1,
+.left-content h2 {
+  font-size: clamp(2rem, 5vw, 52px);
+  font-weight: bold;
+}
+
+.left-content h2 {
+  color: #ff6b35;
+}
+
+.cvmaker-text button {
+  padding: clamp(12px, 2vw, 15px) clamp(30px, 4vw, 40px);
+  font-size: clamp(1rem, 2vw, 20px);
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  background-color: #1c2541;
+  color: white;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  align-self: flex-start;
+  max-width: max-content;
+}
+
+.cvmaker-text button:hover {
+  font-weight: bold;
+}
+
+.cvmaker-logo img {
+  width: 150%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .left-content h1,
+  .left-content h2 {
+    font-size: clamp(1.8rem, 4vw, 42px);
+  }
+
+  .cvmaker-text button {
+    font-size: 18px;
+    padding: 12px 30px;
+  }
+}
+
+/* For large phones and small tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .cvmaker {
+    flex-direction: row; /* stay horizontal */
+    flex-wrap: nowrap;
+  }
+
+  .cvmaker-text,
+  .cvmaker-logo {
+    flex: 1 1 50%;
+    align-items: flex-start;
+    text-align: left;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  .cvmaker-text button {
+    align-self: flex-start;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 10px 24px;
+  }
+
+  .left-content h1,
+  .left-content h2 {
+    font-size: clamp(1.5rem, 4vw, 32px);
+  }
+
+  .cvmaker-logo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+
+/* For small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .left-content h1,
+  .left-content h2 {
+    font-size: clamp(1.2rem, 4.5vw, 28px);
+  }
+
+  .cvmaker-text button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .cvmaker-text,
+  .cvmaker-logo {
+    padding: 10px;
+  }
+}

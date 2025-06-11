@@ -1,5 +1,3 @@
-
-<!-- **************************************  CSS IS IN MANPOWER.CSS  **************************************************************** -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +7,7 @@
   img-src 'self' data: https:;
   style-src 'self' https://fonts.googleapis.com;
   font-src https://fonts.gstatic.com;
-  script-src 'none';
+ script-src 'self' 'unsafe-inline';
   object-src 'none';
   frame-ancestors 'none';
   base-uri 'self';
@@ -18,8 +16,8 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - About </title>
-  <link rel="stylesheet" href="manpower.css">   
+  <title>ASHWAGRID - Mobility </title>
+  <link rel="stylesheet" href="mobility.css">   
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -41,42 +39,82 @@
       window.location.href = selectedValue;
     }
   }
+
+   document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('servicesToggle');
+    const menu = document.getElementById('servicesMenu');
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    });
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+
+ 
+function validateCorporateForm() {
+  const phone = document.querySelector('input[name="phone"]').value.trim();
+  const phonePattern = /^[0-9]{10}$/;
+
+  if (!phonePattern.test(phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return false;
+  }
+
+  return true; // allow submission
+}
+
+
 </script>
 
     <!-- NAVIGATION BAR  -->
-    <nav>
+     <nav>
       <ul>
-        <li><a href="manpower.php" >Home</a></li>
-        <li><a href="who.php"  class="active ">Who Are We</a></li>
-        <li><a href="AccessTheGrid.php">Access The Grid</a></li>
-        <li><a href="joinTheGrid.php">Join The Grid</a></li>
-        <li><a href="cvmaker.php">CV Maker</a></li>
-        <li><a href="FAQ.php">FAQ</a></li>
-        <li><a href="blog.php">Blog</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="mobility.php" >Home</a></li>
+        <li><a href="aboutus.php" >About Us</a></li>
+      <li class="dropdown1">
+  <a class="active">Services</a>
+ <ul class="dropdown-menu1" id="servicesMenu">
+  <li class="dropdown-arrow1"></li>
+  <li><a href="corporate.php">Corporate Contact</a></li>
+  <li><a href="rental.php">Car Rental Booking</a></li>
+  <li><a href="uber.php">Uber Services</a></li>
+</ul>
+</li>
+  <li><a href="#">Inventor Page </a></li>
       </ul>
     </nav>
   </header>
-  <!-- HERO SECTION -->
- <section class="hero-section1 highlight-section">
-    <div class="hero-text1">
-      <h1><span class="slide-in blue">Driven by Purpose,</span></h1><br>
-      <h1><span class="slide-in orange delay">Defined by Service.</span></h1>
-      <br>
-      <p>AshwaGrid is a next- generation manpower and mobility solutions providers. We specialize in connecting skilled <br>
-      drivers and manpower with businesses and individuals across cities. With a strong focus on safety,<br>
-       professionalism, and convenience, we ensure every ride and recruitment is reliable.      </p>
-      <br>
-    </div>
-    <div class="hero-images1">
-      <img src="images/7.png" alt="Image 1">
-      <img src="images/8.png" alt="Image 2">
-      <img src="images/9.png" alt="Image 3">
-      <img src="images/10.png" alt="Image 4">
-      <img src="images/11.png" alt="Image 5">
-    </div>
-  </section>
-  <footer>
+
+
+<section class="rental">
+    <div class="rental-text">
+      <h1>Your Ride, Your Rules.</h1>
+      <p> Select from our fleet of reliable, AC-equipped cars — <br>
+      tailored for comfort, affordability, and smooth travel. <br>
+       Whether you need a solo ride or a group travel option, <br>
+        we have the right car for you. Just fill in your travel <br>
+        details, and we'll show you the price before you <br>
+        confirm </p>
+</div>
+</section>
+ <div class="welcome-section">
+    <h2>Welcome To AshwaGrid Mobility Service</h2>
+    <p>
+      Budget trips, Daily errands, City rides, Business travel, Comfortable intercity travel, Family/group trips,
+      Mumbai Darshan <br>
+       ALL-IN-ONE Solution is AshwaGrid...!
+    </p>
+  </div>
+
+
+   <footer>
     <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
     </div>
@@ -107,5 +145,7 @@
 </div>
     </div>
   </footer>
+  <!-- script.js line 32 ************************************************* -->
+   <script src="script.js"></script>
 </body>
 </html>

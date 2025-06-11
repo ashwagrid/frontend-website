@@ -45,7 +45,7 @@
         <li><a href="who.php">Who Are We</a></li>
         <li><a href="AccessTheGrid.php">Access The Grid</a></li>
         <li><a href="joinTheGrid.php">Join The Grid</a></li>
-        <li><a href="#">CV Maker</a></li>
+        <li><a href="cvmaker.php">CV Maker</a></li>
         <li><a href="FAQ.php">FAQ</a></li>
         <li><a href="blog.php"  class="active">Blog</a></li>
         <li><a href="contact.php">Contact</a></li>

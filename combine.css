@@ -655,8 +655,8 @@ nav ul li a.active {
 /* Left side form */
 .form-section {
   justify-content: flex-start;
-  background-color: #1c2541;
-  color: #fff;
+  background-color: #1c2541 !important;
+  color: white !important;
   border-radius: 15px;
   padding: 30px;
   width: 100%;
@@ -1128,3 +1128,4 @@ button:hover {
     transform: scale(0.55);
   }
 }
+
