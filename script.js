@@ -1,23 +1,27 @@
-const cards = document.querySelectorAll('.card');
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("JS Loaded");
 
-cards.forEach(card => {
-  const overlay = card.querySelector('.overlay-image');
-  const overlayUrl = card.getAttribute('data-overlay');
+  // ========== 1. Card hover overlay ==========
+  const cards = document.querySelectorAll('.card');
 
-  card.addEventListener('mouseenter', () => {
-    overlay.style.backgroundImage = `url('${overlayUrl}')`;
-    card.classList.add('hovered');
+  cards.forEach(card => {
+    const overlay = card.querySelector('.overlay-image');
+    const overlayUrl = card.getAttribute('data-overlay');
+
+    card.addEventListener('mouseenter', () => {
+      overlay.style.backgroundImage = `url('${overlayUrl}')`;
+      card.classList.add('hovered');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('hovered');
+      overlay.style.backgroundImage = 'none';
+    });
   });
 
-  card.addEventListener('mouseleave', () => {
-    card.classList.remove('hovered');
-    overlay.style.backgroundImage = 'none';
-  });
-});
- 
-document.addEventListener('DOMContentLoaded', () => {
+  // ========== 2. Active Nav Highlight ==========
   const navLinks = document.querySelectorAll('nav ul li a');
-  const currentUrl = window.location.pathname; // or window.location.hash
+  const currentUrl = window.location.pathname;
 
   navLinks.forEach(link => {
     if (link.getAttribute('href') === currentUrl || link.getAttribute('href') === window.location.hash) {
@@ -26,85 +30,82 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.remove('active');
     }
   });
+
+  // ========== 3. Car Animation ==========
+  const carImages = [
+    "images/20.png",
+    "images/21.png",
+    "images/22.png",
+    "images/23.png"
+  ];
+  let carIndex = 0;
+
+  function animateCars() {
+    const rentalSection = document.querySelector('.rental');
+
+    if (!rentalSection) {
+      console.warn("No .rental section found");
+      return; // Exit safely if the section doesn't exist on this page
+    }
+
+    const car = document.createElement('img');
+    car.src = carImages[carIndex];
+    car.alt = "moving car";
+    car.classList.add('moving-car', 'animate');
+    rentalSection.appendChild(car);
+
+    setTimeout(() => {
+      car.remove();
+    }, 8000);
+
+    carIndex = (carIndex + 1) % carImages.length;
+  }
+
+  // Start and repeat animation
+  animateCars();
+  setInterval(animateCars, 8000);
+
+  // ========== 4. CV Form Toggle ==========
+  const toggleBtn = document.getElementById("toggle-info");
+  const additionalFields = document.getElementById("additional-fields");
+
+  if (toggleBtn && additionalFields) {
+    toggleBtn.addEventListener("click", function () {
+      if (additionalFields.style.display === "none" || additionalFields.style.display === "") {
+        additionalFields.style.display = "block";
+      } else {
+        additionalFields.style.display = "none";
+      }
+    });
+  } else {
+    console.log("Toggle elements not found");
+  }
+
 });
+// STEP 2 ***********************************************
+ function addEntry(section) {
+  let group;
+  if (section === "qualification") {
+    group = `
+      <div class="entry-group">
+        <input type="text" name="qualification_title[]" placeholder="Qualification Title" />
+        <input type="text" name="institution[]" placeholder="Institution Name" />
+        <input type="text" name="year[]" placeholder="Year Completed" />
+      </div>`;
+  } else if (section === "experience") {
+    group = `
+      <div class="entry-group">
+        <input type="text" name="job_title[]" placeholder="Job Title" />
+        <input type="text" name="company[]" placeholder="Company Name" />
+        <input type="text" name="duration[]" placeholder="Duration (e.g. 2020-2023)" />
+      </div>`;
+  } else if (section === "skills") {
+    group = `
+      <div class="entry-group">
+        <input type="text" name="skills[]" placeholder="Skill (e.g. Python, Communication)" />
+      </div>`;
+  }
 
-
-// script for SpeechRecognitionAlternative.php ************************************************************
- 
-const carImages = [
-  "images/20.png",
-  "images/21.png",
-  "images/22.png",
-  "images/23.png"
-];
-let carIndex = 0;
-
-function animateCars() {
-  const rentalSection = document.querySelector('.rental');
-
-  const car = document.createElement('img');
-  car.src = carImages[carIndex];
-  car.alt = "moving car";
-  car.classList.add('moving-car', 'animate');
-  rentalSection.appendChild(car);
-
-  setTimeout(() => {
-    car.remove();
-  }, 8000);
-
-  carIndex = (carIndex + 1) % carImages.length;
+  const sectionEl = document.querySelector(`.block h3:contains("${section === 'qualification' ? 'Qualifications' : section === 'experience' ? 'Work Experience' : 'Skills'}")`).parentElement;
+  sectionEl.insertAdjacentHTML("beforeend", group);
 }
-
-// Start immediately
-animateCars();
-
-// Run every 8 seconds, only one car
-setInterval(animateCars, 8000);
-
-
-// js for cvform.php**********************************************************
-function goToStep(stepNumber) {
-  const steps = document.querySelectorAll(".step");
-  const lines = document.querySelectorAll(".line-fill");
-
-  steps.forEach((step, index) => {
-    if (index < stepNumber) {
-      step.classList.add("active");
-    } else {
-      step.classList.remove("active");
-    }
-  });
-
-  lines.forEach((line, index) => {
-    if (index < stepNumber - 1) {
-      line.style.width = "100%";
-    } else {
-      line.style.width = "0%";
-    }
-  });
-}
-
-// Example automatic animation
-setTimeout(() => goToStep(2), 1500);  // Go to step 2
-setTimeout(() => goToStep(3), 3000);  // Go to step 3
-
-
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const fills = document.querySelectorAll('.line-fill');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target;
-          if (fill.style.width === '100%') {
-            fill.classList.add('animate-fill');
-          }
-        }
-      });
-    }, { threshold: 0.6 });
-
-    fills.forEach(fill => observer.observe(fill));
-  });
-
-

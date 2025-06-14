@@ -149,7 +149,7 @@ nav ul li a.active {
   border-radius: 12px;
   overflow: visible;
   width: 100%;
-  height: max-content;
+  height: min-content ;
 }
 
 /* Progress Bar */
@@ -184,9 +184,16 @@ nav ul li a.active {
   width: 28px;
   height: auto;
 }
+.step .icon img {
+  filter: none;
+  transition: none;
+}
 
+.step.active .icon img {
+  filter: grayscale(0%) brightness(1);
+}
 .step.active .icon {
-  background-color: white;
+  background-color:#1c2541 ;
 }
 
 .step.active img {
@@ -325,20 +332,8 @@ input[type="file"] {
   font-size: 14px;
 }
 
-/* Additional Info Box */
-.additional-info {
-  text-align: center;
-  background-color: #f1f1f1;
-  color: #444;
-  padding: 14px;
-  margin-top: 30px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 /* Submit Button */
-button[type="submit"] {
+ .personal button[type="submit"] {
   display: block;
   margin: 30px auto 0;
   background-color: #ff6b35;
@@ -352,9 +347,6 @@ button[type="submit"] {
   transition: background 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background-color: #e65a26;
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -373,6 +365,85 @@ button[type="submit"]:hover {
   }
 }
 
+.additional-info-button {
+  width: 100%;
+  background-color: #f1f1f1;
+  color: #767373;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Step 2 ********************************************************** */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.input.full {
+  width: 100%;
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.btn.link {
+  background: none;
+  color: #007bff;
+  text-align: left;
+  padding: 0;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
 
 /* FOOTER SECTION **************************************************************************************************** */
 footer {
