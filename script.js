@@ -109,3 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sectionEl = document.querySelector(`.block h3:contains("${section === 'qualification' ? 'Qualifications' : section === 'experience' ? 'Work Experience' : 'Skills'}")`).parentElement;
   sectionEl.insertAdjacentHTML("beforeend", group);
 }
+ 
+function execCmd(command) {
+  document.execCommand(command, false, null);
+}

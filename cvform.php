@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ASHWAGRID - CV Maker</title>
   <link rel="stylesheet" href="allforms.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 <header>
@@ -95,12 +96,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="label">Template</div>
     </div>
   </div>
-
   <form class="cvform" method="post" enctype="multipart/form-data">
     <input type="hidden" name="step" value="<?= $step ?>">
 
     <?php if ($step === 1): ?>
       <!-- Step 1 -->
+       <section class="step1">
       <div class="cvform-header">
         <h2>Personal details</h2>
         <div class="resume-language">
@@ -155,74 +156,300 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="personal">
    <button type="submit">Next ➜</button>
 </div>
-
+</section>
      
 
     <?php elseif ($step === 2): ?>
-<div class="cvform-header">
-        <h2>Education & Qualification</h2>
-      <div class="card-body">
-        <div class="flex-row">
-          <input type="text" placeholder="e.g. Bachelor of Science" class="input" />
-          <input type="text" placeholder="e.g. San Francisco" class="input" />
-        </div>
-        <input type="text" placeholder="e.g. New York University" class="input full" />
+<section class="step2-edu-section">
+  <div class="step2-edu-header">
+    <h2><i class="fas fa-graduation-cap"></i> Education and Qualifications</h2><br>
+  </div>
 
-        <div class="flex-row">
-          <select class="input">
-            <option>September</option>
-            <option>October</option>
-          </select>
-          <select class="input">
-            <option>2018</option>
-            <option>2019</option>
-          </select>
-          <select class="input">
-            <option>July</option>
-            <option>August</option>
-          </select>
-          <select class="input">
-            <option>2018</option>
-            <option>2019</option>
-          </select>
-        </div>
-
-        <textarea placeholder="Description" class="input full" rows="4"></textarea>
-
-        <div class="button-row">
-          <button class="btn secondary">Tips</button>
-          <div>
-            <button class="btn danger">Delete</button>
-            <button class="btn primary">Save</button>
-          </div>
-        </div>
-        <button class="btn link">➕ Add another education</button>
+  <div class="step2-edu-body">
+    
+    <div class="step2-edu-row">
+      <div class="step2-edu-field">
+        <label for="step2-degree">Degree</label>
+        <input type="text" id="step2-degree" placeholder="e.g. Bachelor of Science" class="step2-edu-input" />
       </div>
-    </section>
-<div class="personal">
+      <div class="step2-edu-field">
+        <label for="step2-city">City/Town</label>
+        <input type="text" id="step2-city" placeholder="e.g. San Francisco" class="step2-edu-input" />
+      </div>
+    </div>
+
+    <div class="step2-edu-field">
+      <label for="step2-school">School</label>
+      <input type="text" id="step2-school" placeholder="e.g. New York University" class="step2-edu-input full" />
+    </div>
+<!-- Start Date and End Date -->
+<div class="step2-edu-field small-group">
+  <label for="start-month">Start Date</label>
+  <div class="step2-edu-dategroup inline-dategroup">
+    <select id="start-month" class="step2-edu-select small-select">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <select id="start-year" class="step2-edu-select small-select">
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+      <option>2022</option>
+      <option>2021</option>
+      <!-- Add more years -->
+    </select>
+  </div>
+</div>
+
+<div class="step2-edu-field small-group">
+  <label for="end-month">End Date</label>
+  <div class="step2-edu-dategroup inline-dategroup">
+    <select id="end-month" class="step2-edu-select small-select">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <select id="end-year" class="step2-edu-select small-select">
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+      <option>2022</option>
+      <option>2021</option>
+      <!-- Add more years -->
+    </select>
+  </div>
+</div>
+
+<!-- Description with formatting icons -->
+<div class="step2-edu-field full-width">
+  <label>Description</label>
+  <div class="editor-toolbar">
+    <button type="button" onclick="execCmd('bold')"><b>B</b></button>
+    <button type="button" onclick="execCmd('italic')"><i>I</i></button>
+    <button type="button" onclick="execCmd('underline')"><u>U</u></button>
+    <button type="button" onclick="execCmd('insertUnorderedList')">&#8226; List</button>
+  </div>
+  <div class="editor-area" contenteditable="true"></div>
+</div>
+
+    <div class="step2-edu-buttons">
+      <button class="step2-edu-btn secondary">Tips</button>
+      <div>
+       <button class="step2-edu-btn danger">
+  <i class="fas fa-trash-alt"></i> Delete
+</button>
+<button class="step2-edu-btn primary">
+  <i class="fas fa-save"></i> Save
+</button>
+ </div>
+    </div>
+
+    <button class="step2-edu-btn link">➕ Add another education</button>
+  </div>
+</section>
+<div class="cv-section-gap"></div>
+
+<!-- EXPERIENCE SECTION -->
+<section class="cv-section" id="section-experience">
+  <div class="step2-edu-section">
+    <div class="step2-edu-header">
+     <h2><i class="fas fa-briefcase"></i> Work Experience</h2><br>
+    </div>
+    <div class="step2-edu-body">
+
+      <div class="step2-edu-row">
+        <div class="step2-edu-field">
+          <label>Job Title</label>
+          <input type="text" class="step2-edu-input" placeholder="e.g. Sales Manager" />
+        </div>
+        <div class="step2-edu-field">
+          <label>City/Town</label>
+          <input type="text" class="step2-edu-input" placeholder="e.g. San Francisco" />
+        </div>
+      </div>
+
+      <div class="step2-edu-row">
+        <div class="step2-edu-field" style="flex: 1 1 100%;">
+          <label>Employer</label>
+          <input type="text" class="step2-edu-input" placeholder="e.g. PwC" />
+        </div>
+      </div>
+
+<!-- Start Date and End Date -->
+<div class="step2-edu-field small-group">
+  <label for="start-month">Start Date</label>
+  <div class="step2-edu-dategroup inline-dategroup">
+    <select id="start-month" class="step2-edu-select small-select">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <select id="start-year" class="step2-edu-select small-select">
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+      <option>2022</option>
+      <option>2021</option>
+      <!-- Add more years -->
+    </select>
+  </div>
+</div>
+
+<div class="step2-edu-field small-group">
+  <label for="end-month">End Date</label>
+  <div class="step2-edu-dategroup inline-dategroup">
+    <select id="end-month" class="step2-edu-select small-select">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <select id="end-year" class="step2-edu-select small-select">
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+      <option>2022</option>
+      <option>2021</option>
+      <!-- Add more years -->
+    </select>
+  </div>
+</div>
+
+<!-- Description with formatting icons -->
+<div class="step2-edu-field full-width">
+  <label>Description</label>
+  <div class="editor-toolbar">
+    <button type="button" onclick="execCmd('bold')"><b>B</b></button>
+    <button type="button" onclick="execCmd('italic')"><i>I</i></button>
+    <button type="button" onclick="execCmd('underline')"><u>U</u></button>
+    <button type="button" onclick="execCmd('insertUnorderedList')">&#8226; List</button>
+  </div>
+  <div class="editor-area" contenteditable="true"></div>
+</div>
+
+      <div class="step2-edu-buttons">
+        <button class="step2-edu-btn secondary"> Tips</button>
+         <div>
+       <button class="step2-edu-btn danger">
+  <i class="fas fa-trash-alt"></i> Delete
+</button>
+<button class="step2-edu-btn primary">
+  <i class="fas fa-save"></i> Save
+</button>
+ </div>
+      </div>
+
+      <button class="step2-edu-btn link">➕ Add another work experience</button>
+
+    </div>
+  </div>
+</section>
+<div class="cv-section-gap"></div>
+
+
+<!-- SKILLS SECTION -->
+<section class="cv-section" id="section-skills">
+  <div class="step2-edu-section">
+    <div class="step2-edu-header">
+     <h2><i class="fas fa-mouse"></i> Computer Skills</h2><br>
+    </div>
+    <div class="step2-edu-body">
+
+      <div class="step2-edu-row">
+        <div class="step2-edu-field">
+          <label>Skill</label>
+          <input type="text" class="step2-edu-input" placeholder="e.g. Microsoft Word" />
+        </div>
+        <div class="step2-edu-field">
+          <label>Level</label>
+          <select class="step2-edu-select">
+            <option>Select level</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="step2-edu-buttons">
+        <button class="step2-edu-btn secondary">Tips</button>
+        <div>
+       <button class="step2-edu-btn danger">
+  <i class="fas fa-trash-alt"></i> Delete
+</button>
+<button class="step2-edu-btn primary">
+  <i class="fas fa-save"></i> Save
+</button>
+ </div>
+      </div>
+
+      <button class="step2-edu-btn link">➕ Add another skill</button>
+
+    </div>
+  </div>
+</section>
+<div class="cv-section-gap"></div>
+
+<div class="experience">
    <button type="submit">Next ➜</button>
 </div>
-    
-    <?php elseif ($step === 3): ?>
-      <!-- Step 3 -->
-      <h2>Preview</h2>
-      <div class="cv-template">
-        <p><strong>Name:</strong> <?= $_SESSION['personal']['firstName'] . ' ' . $_SESSION['personal']['lastName'] ?></p>
-        <p><strong>Email:</strong> <?= $_SESSION['personal']['email'] ?></p>
-        <p><strong>Phone:</strong> <?= $_SESSION['personal']['phone'] ?></p>
-        <p><strong>Experience:</strong> <?= $_SESSION['experience']['title'] ?> - <?= $_SESSION['experience']['description'] ?></p>
-        <p><strong>City:</strong> <?= $_SESSION['personal']['city'] ?></p>
-        <?php if (!empty($_SESSION['personal']['photo'])): ?>
-          <img src="<?= $_SESSION['personal']['photo'] ?>" alt="Uploaded Photo" style="max-width:150px;" />
-        <?php endif; ?>
-      </div>
-      <button type="submit" name="download">Download PDF</button>
-    <?php endif; ?>
-  </form>
-</section>
+<?php elseif ($step === 3): ?>
+<section class="cvtemplate-step">
 
-   
-   <footer>
+  <div class="template-grid-container">
+    <?php for ($i = 1; $i <= 8; $i++): ?>
+      <div class="template-card" data-template-id="<?= $i ?>">
+        <img src="templates/template<?= $i ?>.png" alt="CV Template <?= $i ?>">
+      </div>
+    <?php endfor; ?>
+  </div>
+
+  <div class="download-btn-container">
+    <button class="download-btn">Download CV ➜</button>
+  </div>
+
+</section>
+<?php endif; ?>
+</section>
+</form>
+
+  <footer>
     <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
     </div>
