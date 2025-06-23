@@ -12,7 +12,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - Manpower </title>
+  <title>ASHWAGRID - CV Maker </title>
   <link rel="stylesheet" href="manpower.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -70,9 +70,6 @@
 </section>
 
 
-
-   <script src="script.js"></script>
-   
    <footer>
     <div class="footer-logo">
       <img src="images/ashwa.png" alt="Ashwagrid Logo">
@@ -99,10 +96,13 @@
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
   <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
   <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
     </div>
   </footer>
+  
+   <script src="script.js"></script>
+   
 </body>
 </html>

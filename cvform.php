@@ -77,7 +77,7 @@ if ($response === FALSE) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ASHWAGRID - CV Maker</title>
+  <title>ASHWAGRID - CV Maker Form</title>
   <link rel="stylesheet" href="allforms.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -511,7 +511,7 @@ if ($response === FALSE) {
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
   <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
   <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
     </div>

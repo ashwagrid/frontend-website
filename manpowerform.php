@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ASHWAGRID - Access The Grid</title>
+  <title>ASHWAGRID - Manpower Request Form</title>
   <link rel="stylesheet" href="combine.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +18,7 @@
       <img src="images/ashwa.png" alt="ASHWAGRID Logo">
       <select class="dropdown" id="redirectDropdown" onchange="redirectPage()">
         <option value="" selected disabled hidden>Choose Service</option>
-        <option value="">MOBILITY</option>
+        <option value="mobility.php">MOBILITY</option>
         <option value="manpower.php">MANPOWER</option>
       </select>
     </div>
@@ -133,7 +133,7 @@
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
         <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-        <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
         <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
       </div>
     </div>

@@ -99,7 +99,7 @@
 
       <div class="footer-icons">
         <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="Instagram"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="Instagram"></a>
         <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="Email"></a>
       </div>
     </div>

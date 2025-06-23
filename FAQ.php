@@ -165,7 +165,7 @@
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
    <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
   <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
     </div>

@@ -18,7 +18,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - About </title>
+  <title>ASHWAGRID - Who Are We</title>
   <link rel="stylesheet" href="manpower.css">   
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -102,7 +102,7 @@
       <a>xyz, office no. xx,<br> Navi Mumbaio</a>
       <div class="footer-icons">
   <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
+  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
   <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
     </div>

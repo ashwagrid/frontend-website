@@ -17,7 +17,7 @@
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-  <title>ASHWAGRID - Mobility </title>
+  <title>ASHWAGRID - Inventory  </title>
   <link rel="stylesheet" href="mobility.css">   
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -62,7 +62,7 @@
     <!-- NAVIGATION BAR  -->
     <nav>
       <ul>
-        <li><a href="mobility.php" class="active" >Home</a></li>
+        <li><a href="mobility.php"  >Home</a></li>
         <li><a href="aboutus.php" >About Us</a></li>
       <li class="dropdown1">
   <a >Services</a>
@@ -73,7 +73,7 @@
   <li><a href="uber.php">Uber Services</a></li>
 </ul>
 </li>
- <li><a href="Inventory.php">Inventor Page </a></li>
+ <li><a href="Inventory.php" class="active">Inventor Page </a></li>
 </ul>
     </nav>
   </header>
