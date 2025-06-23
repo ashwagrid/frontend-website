@@ -87,7 +87,7 @@ function validateCorporateForm() {
   <li><a href="uber.php">Uber Services</a></li>
 </ul>
 </li>
-  <li><a href="#">Inventor Page </a></li>
+  <li><a href="Inventory.php">Inventor Page </a></li>
       </ul>
     </nav>
   </header>
@@ -112,6 +112,62 @@ function validateCorporateForm() {
        ALL-IN-ONE Solution is AshwaGrid...!
     </p>
   </div>
+<div class="booking-form-section">
+  <h3>Book Your Ride Here!</h3>
+  <form method="post" action="submit.php" id="rideForm">
+    <div class="row">
+      <div>
+        <label>Pickup Location</label>
+        <input class="rental1" type="text" name="pickup1" required />
+      </div>
+      <div>
+        <label>Pickup Location</label>
+        <input class="rental1" type="text" name="pickup2" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Date</label>
+        <input class="rental1" type="date" name="date1" required />
+      </div>
+      <div>
+        <label>Time</label>
+        <input class="rental1" type="time" name="time1" required />
+      </div>
+      <div>
+        <label>Date</label>
+        <input class="rental1" type="date" name="date2" required />
+      </div>
+      <div>
+        <label>Time</label>
+        <input class="rental1" type="time" name="time2" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Select Car</label>
+        <select class="rental1" name="car">
+          <option>Sedan</option>
+          <option>SUV</option>
+          <option>Mini</option>
+          <option>Luxury</option>
+        </select>
+      </div>
+      <div>
+        <label>Number of People</label>
+        <input class="rental1" type="number" name="people" required />
+      </div>
+      <div>
+        <label>Number of Cars Needed</label>
+        <input class="rental1" type="number" name="cars" required />
+      </div>
+    </div>
+
+    <button type="submit" class="rental1">Continue ➜</button>
+  </form>
+</div>
 
 
    <footer>

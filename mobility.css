@@ -800,7 +800,7 @@ textarea {
 /* Welcome Section */
 .welcome-section {
   max-width: 100%;
-  padding:2.5vw;
+  margin: 20px 20px 20px 0px;
   text-align: left;
   color: #1c2541;
   position: relative;
@@ -836,8 +836,187 @@ textarea {
     padding: 0 20px;
   }
 }
+.booking-form-section {
+  background: #f1f1f1;
+  padding: 25px;
+  border-radius: 12px;
+margin: 40px 0 60px 0;
+  width: 100%;
+}
 
+.booking-form-section h3 {
+  color: #ff6b35;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
+.booking-form-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.booking-form-section .row > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.rental1 {
+  width: 80%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 2px solid #1c2541;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #1c2541;
+}
+.booking-form-section label {
+  font-weight: 400;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 20px;
+  color: #1c2541; 
+}
+
+.booking-form-section label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+}
+
+button.rental1 {
+  background-color: #ff6b35;
+  color: #fff;
+  border: none;
+  padding: 9px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
+}
+
+/* INVENTORY PAGE********************************************************************************************* */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT PANEL */
+.login-left {
+  width: 50%;
+  background: #1c2541 url('images/team-background.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.logo-area {
+  text-align: center;
+}
+
+.main-logo {
+  width: 100px;
+}
+
+.logo-area h1 {
+  color: #ff6b35;
+  margin-top: 10px;
+}
+
+.contact-info {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.contact-info h3 {
+  color: #ff6b35;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.contact-info img {
+  width: 16px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 25px;
+}
+
+/* RIGHT PANEL */
+.login-right {
+  width: 50%;
+  background: white;
+  padding: 60px 40px;
+  text-align: center;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.illustration {
+  width: 60%;
+  max-width: 300px;
+  margin-bottom: 40px;
+}
+
+.login-right input {
+  width: 80%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+.forgot {
+  margin-top: -10px;
+  margin-bottom: 25px;
+  text-align: right;
+  width: 80%;
+  margin-left: auto;
+  font-size: 13px;
+}
+
+.login-btn {
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #e65c25;
+}
  /* FPOTER SECTION **************************************************************************************** */
 footer {
   width: 100%;

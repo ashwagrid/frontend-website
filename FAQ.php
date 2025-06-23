@@ -30,7 +30,7 @@
       <img src="images/ashwa.png" alt="ASHWAGRID Logo">
       <select class="dropdown" id="redirectDropdown" onchange="redirectPage()">
         <option value="" selected disabled hidden>Choose Service</option>
-        <option value="">MOBILITY</option>
+        <option value="mobility.php">MOBILITY</option>
         <option value="manpower.php">MANPOWER</option>
       </select>
     </div>

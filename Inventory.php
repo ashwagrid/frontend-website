@@ -72,78 +72,41 @@
   <li><a href="rental.php">Car Rental Booking</a></li>
   <li><a href="uber.php">Uber Services</a></li>
 </ul>
-
 </li>
-
-
-        <li><a href="Inventory.php">Inventor Page </a></li>
-      </ul>
+ <li><a href="Inventory.php">Inventor Page </a></li>
+</ul>
     </nav>
   </header>
-<main class="hero-section">
-  <div class="hero-content">
-    <h1>Three Ways to Move. One Platform to Choose.</h1>
-    <p>AshwaGrid Mobility offers three seamless services to meet every travel and transport need</p>
+  <div class="login-container">
+  <!-- LEFT PANEL -->
+  <div class="login-left">
+    <div class="logo-area">
+      <img src="images/ashwa.png" class="main-logo" alt="Ashwagrid Logo">
+      <h1>ASHWAGRID</h1>
+    </div>
+
+    <div class="contact-info">
+      <h3>Contact Info</h3>
+      <p><img src="images/phone.png" alt=""> +91 4636537657</p>
+      <p><img src="images/email.png" alt=""> Ashwagrid@gmail.com</p>
+      <p><img src="images/location.png" alt=""> xyz, office no. xx, Navi Mumbaio</p>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><img src="images/facebook.png" alt=""></a>
+      <a href="#"><img src="images/insta.png" alt=""></a>
+      <a href="#"><img src="images/youtube.png" alt=""></a>
+    </div>
   </div>
 
-  <div class="card-container"> 
-    <div class="card">
-      <img src="images/7.png" alt="Car Rental">
-      <div class="card-content">
-        <h3>Car Rental</h3>
-        <p>Premium and budget vehicles for daily and short-term use.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/8.png" alt="City-to-City Ride">
-      <div class="card-content">
-        <h3>City-to-City Ride</h3>
-        <p>Comfortable intercity rides at affordable prices.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/9.png" alt="Explore Mumbai">
-      <div class="card-content">
-        <h3>Explore Mumbai</h3>
-        <p>Explore the city with guided tours and pickup/drop.</p>
-      </div>
-    </div>
+  <!-- RIGHT PANEL -->
+  <div class="login-right">
+    <img src="images/login-illustration.png" class="illustration" alt="Login Illustration">
+    <form method="post" action="dashboard.php">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <div class="forgot"><a href="#">Forgot Password?</a></div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
   </div>
-</main>
-
-   
-<footer>
-    <div class="footer-logo">
-      <img src="images/ashwa.png" alt="Ashwagrid Logo">
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <a href="manpower.php">Home</a>
-      <a href="who.php">Who Are We</a>
-      <a href="AccessTheGrid.php">Access The Grid</a>
-      <a href="joinTheGrid.php">Join The Grid</a>
-    </div>
-    <div class="footer-column">
-      <h4>Cities We Offer</h4>
-      <a href="#">Mumbai</a>
-      <a href="#">Pune</a>
-      <a href="#">Nashik</a>
-      <a href="#">Nagpur</a>
-      <a href="#">Goa</a>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <a><strong>+91 4636537657</strong></a><br>
-      <a>Ashwagrid@gmail.com</a><br>
-      <a>xyz, office no. xx,<br> Navi Mumbaio</a>
-      <div class="footer-icons">
-  <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/phelixcreatives/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
-  <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
 </div>
-    </div>
-  </footer>
-</body>
-</html>

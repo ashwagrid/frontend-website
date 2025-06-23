@@ -18,12 +18,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       'zip' => clean($_POST['zip']),
       'city' => clean($_POST['city']),
     ];
+if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
+  $photoName = time() . '_' . $_FILES['photo']['name'];
+  move_uploaded_file($_FILES['photo']['tmp_name'], "uploads/$photoName");
+  $_SESSION['personal']['photo'] = "uploads/$photoName";
+}
 
-    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
-      $photoName = time() . '_' . $_FILES['photo']['name'];
-      move_uploaded_file($_FILES['photo']['tmp_name'], "uploads/$photoName");
-      $_SESSION['personal']['photo'] = "uploads/$photoName";
-    }
+// ✅ Prepare data to send to Google Sheets
+$sheetData = [
+  'firstName' => $_SESSION['personal']['firstName'],
+  'lastName' => $_SESSION['personal']['lastName'],
+  'email' => $_SESSION['personal']['email'],
+  'phone' => $_SESSION['personal']['phone'],
+  'address' => $_SESSION['personal']['address'],
+  'zip' => $_SESSION['personal']['zip'],
+  'city' => $_SESSION['personal']['city'],
+  'language' => $_SESSION['personal']['language'],
+  'additionalTitle' => clean($_POST['additionalTitle'] ?? ''),
+  'additionalDescription' => clean($_POST['additionalDescription'] ?? ''),
+  'photo' => $_SESSION['personal']['photo'] ?? ''
+];
+
+// ✅ Replace with full deployed URL of your Google Apps Script
+$googleScriptUrl = 'https://script.google.com/macros/s/AKfycbx3BIGYdpeR5Bg50zihl5TdcAIsbPnMof1qyjktMKan72HHFrTJCYWEQ2az_T5ujaBa/exec';
+
+// ✅ Send POST request
+$options = [
+  'http' => [
+    'header'  => "Content-type: application/json\r\n",
+    'method'  => 'POST',
+    'content' => json_encode($sheetData),
+    'ignore_errors' => true
+  ]
+];
+
+$context = stream_context_create($options);
+$response = file_get_contents($googleScriptUrl, false, $context);
+
+// Optional debugging
+if ($response === FALSE) {
+  echo "<script>alert('Failed to send data to Google Sheets');</script>";
+}
+
 
     $step = 2;
   } elseif ($step === 2) {
@@ -51,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <img src="images/ashwa.png" alt="ASHWAGRID Logo">
     <select class="dropdown" id="redirectDropdown" onchange="redirectPage()">
       <option value="" selected disabled hidden>Choose Service</option>
-      <option value="">MOBILITY</option>
+      <option value="mobility.php">MOBILITY</option>
       <option value="manpower.php">MANPOWER</option>
     </select>
   </div>
@@ -122,23 +158,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <input type="file" name="photo" id="photo" accept="image/*" />
         </div>
         <div class="name-fields">
-          <div><label>First name </label><input type="text" name="firstName" required /></div><br>
-          <div><label>Last name </label><input type="text" name="lastName" required /></div>
+          <div><label>First name </label><input type="text" name="firstName"  /></div><br>
+          <div><label>Last name </label><input type="text" name="lastName"  /></div>
         </div>
       </div>
 
       <div class="form-group1">
-        <div><label>Email address </label><input type="email" name="email" required /></div>
-        <div><label>Phone number </label><input type="tel" name="phone" required /></div>
+        <div><label>Email address </label><input type="email" name="email"  /></div>
+        <div><label>Phone number </label><input type="tel" name="phone"  /></div>
       </div>
 
       <div class="form-group1">
-        <div><label>Address</label><input type="text" name="address" required /></div>
+        <div><label>Address</label><input type="text" name="address"  /></div>
       </div>
 
       <div class="form-group1">
-        <div><label>Zip code </label><input type="text" name="zip" required /></div>
-        <div><label>City/Town</label><input type="text" name="city" placeholder="e.g. Mumbai" required /></div>
+        <div><label>Zip code </label><input type="text" name="zip"  /></div>
+        <div><label>City/Town</label><input type="text" name="city" placeholder="e.g. Mumbai"  /></div>
       </div>
 <button type="button" id="toggle-info" class="additional-info-button">ⓘ Additional Information</button>
 <div id="additional-fields" style="display: none; margin-top: 20px;">

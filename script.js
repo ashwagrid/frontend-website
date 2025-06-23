@@ -65,6 +65,32 @@ document.addEventListener("DOMContentLoaded", function () {
   animateCars();
   setInterval(animateCars, 8000);
 
+  // for rental.php form
+   document.getElementById("rideForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const jsonData = {};
+
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+
+    fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+      method: "POST",
+      body: JSON.stringify(jsonData),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => res.text())
+    .then(data => {
+      alert("Submitted successfully!");
+      document.getElementById("rideForm").reset();
+    })
+    .catch(err => alert("Error: " + err));
+  });
+
   // ========== 4. CV Form Toggle ==========
   const toggleBtn = document.getElementById("toggle-info");
   const additionalFields = document.getElementById("additional-fields");
