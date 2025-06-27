@@ -1316,6 +1316,7 @@ button:hover {
   background-color: #f1f1f1;
   border-radius: 15px;
   padding: clamp(1rem, 3vw, 2rem);
+  height: 700px;
 }
 
 .cvmaker-text {
@@ -1325,7 +1326,7 @@ button:hover {
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  color: #222;
+  color: black;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.6;
   text-align: left;
@@ -1371,17 +1372,15 @@ button:hover {
   justify-content: flex-end;
   align-items: center;
 }
-
-.cvmaker-logo img {
-  width: 450px;
-  min-width: 200px;
+ .cvmaker-logo img{
+  width: 100%;
   height: auto;
-  object-fit: contain;
-}
+ }
 
 
 /* --- Tablets (≤ 1024px) --- */
 @media (max-width: 1024px) {
+
   .left-content h1,
   .left-content h2 {
     font-size: clamp(1.6rem, 4vw, 42px);
@@ -1392,9 +1391,6 @@ button:hover {
     padding: 12px 30px;
   }
 
-  .cvmaker-logo img {
-    max-width: 300px;
-  }
 }
 
 /* --- Phones & Small Tablets (≤ 768px) --- */
@@ -1424,13 +1420,11 @@ button:hover {
     justify-content: center;
   }
 
-  .cvmaker-logo img {
-    max-width: 260px;
-  }
 }
 
 /* --- Small Phones (≤ 480px) --- */
 @media (max-width: 480px) {
+  
   .left-content h1,
   .left-content h2 {
     font-size: clamp(1.1rem, 5vw, 24px);
@@ -1446,7 +1440,4 @@ button:hover {
     padding: 10px;
   }
 
-  .cvmaker-logo img {
-    max-width: 220px;
-  }
 }

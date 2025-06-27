@@ -144,81 +144,6 @@ nav ul li a.active {
   font-weight: bold; 
 }
 
-/* Dropdown container */
-.dropdown1 {
-  position: relative;
-}
-
-/* Services link - match other nav links */
-.dropdown1 > .nav-link {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  padding: 0;
-}
-
-/* Hover effect */
-.dropdown1 > .nav-link:hover {
-  color: #e9601d;
-  transition: color 0.3s ease;
-}
-
-/* Dropdown menu */
-.dropdown-menu1 {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  list-style: none;
-  padding: 15px 20px 10px;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  text-align: center;
-  min-width: 220px;
-}
-
-/* Arrow */
-.dropdown-arrow1 {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid white;
-}
-
-/* Show dropdown on hover */
-.dropdown1:hover .dropdown-menu1 {
-  display: block;
-}
-
-/* Dropdown items */
-.dropdown-menu1 li a {
-  display: block;
-  padding: 6px 0;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* First item highlight */
-.dropdown-menu1 li:first-child a {
-  color: #ff6533;
-  font-weight: bold;
-}
-
-.dropdown-menu1.show {
-  display: block;
-}
-
-
-
 
  /* Hero Section ******************************************************* */
 
@@ -228,7 +153,7 @@ nav ul li a.active {
   color: white;
   position: relative;
   width: 100%;
-  min-height: 600px;  /* fallback for larger screens */
+  min-height: 500px;  /* fallback for larger screens */
   height: auto;
   overflow: hidden;
   border-radius: 20px;

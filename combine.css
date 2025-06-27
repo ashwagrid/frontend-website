@@ -970,6 +970,7 @@ footer {
 
 
 /* Manpower Form Wrapper Section*************************************************************************** */
+
 .manpowerform-container {
   height: 800px;
   display: flex;
@@ -1090,42 +1091,126 @@ button:hover {
 
 .label-row {
   display: flex;
-  gap: 90px; /* Adjust this for spacing */
+  gap: 70px; /* Adjust this for spacing */
 }
 
 .label-row label {
-  width: 48%;
+  width: 30%;
   text-align: left;
 }
 
 /* RESPONSIVE SCALING */
 @media (max-width: 1200px) {
-  .manpowerform-container {
-    transform: scale(0.9);
+  .form-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .form-left, .form-right {
+    flex: 1 1 50%;
   }
 }
 
 @media (max-width: 992px) {
-  .manpowerform-container {
-    transform: scale(0.8);
+  .form-container {
+    flex-direction: row;
+    height: auto;
+  }
+  .form-left, .form-right {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-right: 0;
+  }
+  .input-row, .label-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .small-input {
+    width: 100%;
+  }
+  .form-right {
+    justify-content: center;
+    margin-top: 20px;
   }
 }
-
-@media (max-width: 768px) {
-  .manpowerform-container {
-    transform: scale(0.7);
-  }
-}
-
 @media (max-width: 600px) {
   .manpowerform-container {
-    transform: scale(0.6);
+    height: auto;
+    padding: 20px 15px;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101c3c;
+  }
+
+  .form-container {
+    flex-direction: column;
+    height: auto;
+    padding: 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .form-left {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .form-right img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .form-left h1 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .form-left p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ddd;
+  }
+
+  .input-row,
+  .label-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  .small-input {
+    width: 100%;
+  }
+
+  label {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+    margin-top: 15px;
   }
 }
-
-@media (max-width: 480px) {
-  .manpowerform-container {
-    transform: scale(0.55);
-  }
-}
-

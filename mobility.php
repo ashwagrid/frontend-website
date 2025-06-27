@@ -7,7 +7,7 @@
   img-src 'self' data: https:;
   style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
   font-src https://fonts.gstatic.com;
-  script-src 'self' 'unsafe-inline';
+  script-src 'self' ;
   object-src 'none';
   frame-ancestors 'none';
   base-uri 'self';
@@ -32,6 +32,7 @@
       </select>
     </div>
    <script>
+    // FOR REDIRECT DROPDOWN OF MANPOWER AND MOBILITY 
   function redirectPage() {
     var dropdown = document.getElementById("redirectDropdown");
     var selectedValue = dropdown.value;
@@ -40,23 +41,31 @@
       window.location.href = selectedValue;
     }
   }
+// FOR SERVICE DROPDOWN
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.getElementById("servicesMenu");
 
-   document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('servicesToggle');
-    const menu = document.getElementById('servicesMenu');
-
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      menu.classList.toggle('show');
-    });
-
-    // Close dropdown if clicking outside
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-    });
+  // Toggle dropdown on click
+  dropdownToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation(); // prevent the document click event
+    dropdownMenu.classList.toggle("show");
   });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown1")) {
+      dropdownMenu.classList.remove("show");
+    }
+  });
+
+  // Optional: close dropdown when clicking an item inside
+  dropdownMenu.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+});
+
 </script>
 
     <!-- NAVIGATION BAR  -->
@@ -64,18 +73,7 @@
       <ul>
         <li><a href="mobility.php" class="active" >Home</a></li>
         <li><a href="aboutus.php" >About Us</a></li>
-      <li class="dropdown1">
-  <a >Services</a>
- <ul class="dropdown-menu1" id="servicesMenu">
-  <li class="dropdown-arrow1"></li>
-  <li><a href="corporate.php">Corporate Contact</a></li>
-  <li><a href="rental.php">Car Rental Booking</a></li>
-  <li><a href="uber.php">Uber Services</a></li>
-</ul>
-
-</li>
-
-
+     <li class="dropdown1"><a href="">Service</a></li>
         <li><a href="Inventory.php">Inventor Page </a></li>
       </ul>
     </nav>
@@ -113,37 +111,6 @@
   </div>
 </main>
 
-   
-<footer>
-    <div class="footer-logo">
-      <img src="images/ashwa.png" alt="Ashwagrid Logo">
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <a href="manpower.php">Home</a>
-      <a href="who.php">Who Are We</a>
-      <a href="AccessTheGrid.php">Access The Grid</a>
-      <a href="joinTheGrid.php">Join The Grid</a>
-    </div>
-    <div class="footer-column">
-      <h4>Cities We Offer</h4>
-      <a href="#">Mumbai</a>
-      <a href="#">Pune</a>
-      <a href="#">Nashik</a>
-      <a href="#">Nagpur</a>
-      <a href="#">Goa</a>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <a><strong>+91 4636537657</strong></a><br>
-      <a>Ashwagrid@gmail.com</a><br>
-      <a>xyz, office no. xx,<br> Navi Mumbaio</a>
-      <div class="footer-icons">
-  <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
-  <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
-</div>
-    </div>
-  </footer>
+  
 </body>
 </html>

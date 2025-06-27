@@ -1,3 +1,80 @@
+<!-- date	first name 	middle	last	dob	apply as	add	phone	email -->
+<!-- function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    const data = JSON.parse(e.postData.contents);
+
+    sheet.appendRow([
+      new Date(),
+      data.first_name,
+      data.middle_name,
+      data.last_name,
+      data.dob,
+      data.apply_as,
+      data.address,
+      data.phone,
+      data.email
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "error", message: error.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+ -->
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $data = [
+        'first_name'  => $_POST['first_name'],
+        'middle_name' => $_POST['middle_name'],
+        'last_name'   => $_POST['last_name'],
+        'dob'         => $_POST['dob'],
+        'apply_as'    => $_POST['apply_as'],
+        'address'     => $_POST['address'],
+        'phone'       => $_POST['phone'],
+        'email'       => $_POST['email']
+    ];
+
+    $jsonData = json_encode($data);
+    $url = "https://script.google.com/macros/s/AKfycbyylMwr2HLBLxaHusojjE-E_Ik1l0sBq3QUDhKFWl3WGrHJlUykusBqfegTpTqbuiQG/exec";
+
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/json",
+            'method'  => 'POST',
+            'content' => $jsonData
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+
+    // DEBUG: Show full result
+    echo "<script>console.log('Raw response from Google Script:', " . json_encode($result) . ");</script>";
+
+    // Try decoding JSON
+    $response = json_decode(trim($result), true);
+
+    echo "<script>console.log('Decoded response:', " . json_encode($response) . ");</script>";
+
+    if (
+        is_array($response) &&
+        isset($response['result']) &&
+        strtolower($response['result']) === 'success'
+    ) {
+        $formStatus = "✔︎ Form submitted successfully!";
+    } else {
+        $formStatus = "✖ Error submitting form. Response: " . htmlspecialchars($result);
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +134,7 @@
         <h1>Employee Registration Form</h1>
         <p>Please fill out the form for an HR department to complete your registration. An HR manager will contact you with further instructions.</p>
   <label for="Name">Name</label><br>
-       <form action="#" method="post">
+<form action="" method="post">
     <div class="input-row">
         <div class="form-group">
             <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
@@ -110,6 +187,12 @@
 
 <div class="button-container">
   <button type="submit">Register Me ➝</button>
+  <?php if (isset($formStatus)): ?>
+  <div style="margin-top: 10px; color: <?= strpos($formStatus, 'Error') !== false ? 'red' : 'white' ?>;">
+    <?= $formStatus ?>
+  </div>
+<?php endif; ?>
+
 </div>
 </form>
 
@@ -119,37 +202,5 @@
         <img src="images/18.png" alt="Illustration">
     </div>
 </div>
-
-
-
-  <footer>
-    <div class="footer-logo">
-      <img src="images/ashwa.png" alt="Ashwagrid Logo">
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <a href="manpower.php">Home</a>
-      <a href="who.php">Who Are We</a>
-      <a href="AccessTheGrid.php">Access The Grid</a>
-      <a href="joinTheGrid.php">Join The Grid</a>
-    </div>
-    <div class="footer-column">
-      <h4>Cities We Offer</h4>
-      <a href="#">Mumbai</a>
-      <a href="#">Pune</a>
-      <a href="#">Nashik</a>
-      <a href="#">Nagpur</a>
-      <a href="#">Goa</a>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <a><strong>+91 4636537657</strong></a><br>
-      <a>Ashwagrid@gmail.com</a><br>
-      <a>xyz, office no. xx,<br> Navi Mumbaio</a>
-      <div class="footer-icons">
-  <a href="#" target="_blank"><img src="images/facebook.png" alt="facebook"></a>
-  <a href="https://www.instagram.com/" target="_blank"><img src="images/insta.png" alt="instagram"></a>
-  <a href="mailto:ashwagrid@gmail.com"><img src="images/email.png" alt="email"></a>
-</div>
-    </div>
-  </footer>
+</body>
+</html>
