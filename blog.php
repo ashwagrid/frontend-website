@@ -7,7 +7,7 @@
   img-src 'self' data: https:;
   style-src 'self' https: 'unsafe-inline';
   font-src 'self' https:;
-  script-src 'none';
+  script-src 'self' 'unsafe-inline';
 ">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -55,8 +55,8 @@
   <!-- hero section -->
  <section class="blog-combined">
  <div class="blog-header">
-  <h1>Insights, Tips & Stories From the Field</h1>
-  <p>
+  <h1 class="blogh1">Insights,Tips & Stories From the Field</h1>
+  <p class="blogp">
     Explore helpful resources, job tips, industry trends, and success stories from our workers and partners. <br>
     Whether you're looking to improve your CV, understand the hiring process, or hear from people like you <br> — our blog is a space to learn and grow.
   </p>
@@ -65,14 +65,20 @@
   </div>
 </div>
 <div class="blog-search-filter">
-<div class="search-wrapper">
-  <input type="text" id="searchInput" placeholder="Search Blog Posts">
-  <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path d="M10 2a8 8 0 105.29 14.29l5 5a1 1 0 001.42-1.42l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
-  </svg>
+  <div class="search-wrapper">
+    <input type="text" id="searchInput" placeholder="Search Blog Posts">
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 2a8 8 0 105.29 14.29l5 5a1 1 0 001.42-1.42l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+    </svg>
+  </div>
+  <button id="filterBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" class="filter-icon" viewBox="0 0 24 24">
+      <path d="M3 5h18v2H3V5zm4 6h10v2H7v-2zm-2 6h14v2H5v-2z"/>
+    </svg>
+    <span>Filters Results</span>
+  </button>
 </div>
- <button id="filterBtn">🔧 Filters Results</button>
-</div>
+
 
 
   <!-- Blog Card Grid Section -->
@@ -148,5 +154,7 @@
     </div>
   </div>
 </section>
+<script src="script.js"></script>
+
 </body>
 </html>

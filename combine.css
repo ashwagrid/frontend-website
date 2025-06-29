@@ -133,12 +133,12 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #e9601d;
+  color: #ff6b35;
   transition: color 0.3s ease;
 }
 
 nav ul li a.active {
-  color: #e9601d;
+  color: #ff6b35;
   font-weight: bold;
 }
 
@@ -242,7 +242,7 @@ nav ul li a.active {
 }
 
 .step .highlight {
-  color: #ff5722;
+  color: #ff6b35;
   font-weight: 400;
   text-align: center;
   margin-top: 20px;
@@ -267,7 +267,7 @@ nav ul li a.active {
 }
 
 .btn {
-  background-color: #ff5722;
+  background-color: #ff6b35;
   color: white;
   border: none;
   border-radius: 30px;
@@ -280,7 +280,7 @@ nav ul li a.active {
 
 .btn:hover {
   background-color: white;
-  color: #ff5722;
+  color: #ff6b35;
 }
 .steps-wrapper {
   position: relative;  /* add this if not present */
@@ -457,7 +457,7 @@ nav ul li a.active {
   transform: translateY(-50%);
   padding: 12px 25px;
   border: none;
-  background-color: #ff6533;
+  background-color: #ff6b35;
   color: #fff;
   border-radius: 50px;
   font-weight: 600;
@@ -484,11 +484,15 @@ nav ul li a.active {
   flex-wrap: nowrap;
   gap: 40px;
   align-items: flex-start;
+  align-content: flex-start;
 }
 
 .faq-list {
+  display: flex;
+  flex-direction: column;
   flex: 2 1 60%;
   min-width: 250px;
+  gap: 20px; /* optional: spacing between questions */
 }
 
 .faq-item {
@@ -496,6 +500,10 @@ nav ul li a.active {
   padding: 25px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.faq-item.search-only {
+  display: none;
 }
 
 .faq-item .question {
@@ -523,7 +531,7 @@ nav ul li a.active {
   opacity: 0;
   transition: all 0.4s ease;
   font-size: 1.2rem;
-  color: #ff6533;
+  color: #ff6b35;
 }
 
 .faq-item.open .answer {
@@ -709,7 +717,7 @@ nav ul li a.active {
   border-radius: 18px;
   border: none;
   outline: none;
-  background-color: #ff7337;
+  background-color: #ff6b35;
   color: #ffbba3;
   font-size: 15px;
   font-style: italic;
@@ -906,7 +914,7 @@ form button {
 /* FPOTER SECTION **************************************************************************************** */
 footer {
   width: 100%;
-  background-color: #162040;
+  background-color: #1c2541;
   color: #fff;
   padding: 40px;
   display: flex;
@@ -934,7 +942,7 @@ footer {
 }
 
 .footer-column h4 {
-  color: #ff6533;
+  color: #ff6b35;
   margin-bottom: 30px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -975,7 +983,7 @@ footer {
   height: 800px;
   display: flex;
   align-items: flex-start;  /* changed from 'top' to 'flex-start' */
-  background-color: #101c3c;
+  background-color: #1c2541;
   border-radius: 15px;
   transform-origin: top left;  /* Important for scaling */
   width: 100%;
@@ -985,7 +993,7 @@ footer {
 .form-container {
   display: flex;
   flex-direction: row;
-  background-color: #101c3c;
+  background-color: #1c2541;
   border-radius: 15px;
   padding: 20px;
   width: 100%;
@@ -1066,7 +1074,7 @@ label {
 
 button {
   background-color: white;
-  color: #101c3c;
+  color: #1c2541;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
@@ -1141,7 +1149,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #101c3c;
+    background-color: #1c2541;
   }
 
   .form-container {

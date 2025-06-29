@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   img-src 'self' data: https:;
   style-src 'self' https: 'unsafe-inline';
   font-src 'self' https:;
-  script-src 'none';
+  script-src 'self' 'unsafe-inline';
 ">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">

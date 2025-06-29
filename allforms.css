@@ -133,12 +133,12 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #e9601d;
+  color: #ff6b35;
   transition: color 0.3s ease;
 }
 
 nav ul li a.active {
-  color: #e9601d;
+  color: #ff6b35;
   font-weight: bold;
 }
 
@@ -611,7 +611,7 @@ input[type="file"] {
 }
 
 .download-btn {
-  background-color: #ff6533;
+  background-color: #ff6b35;
   color: #fff;
   font-weight: 600;
   font-size: 16px;
@@ -623,7 +623,7 @@ input[type="file"] {
 }
 
 .download-btn:hover {
-  background-color: #e55425;
+  background-color: #ff6b35;
 }
 
 .cvtemplate-step {
@@ -642,7 +642,7 @@ input[type="file"] {
 /* FOOTER SECTION **************************************************************************************************** */
 footer {
   width: 100%;
-  background-color: #162040;
+  background-color: #1c2541;
   color: #fff;
   padding: 40px;
   display: flex;
@@ -672,7 +672,7 @@ footer {
 }
 
 .footer-column h4 {
-  color: #ff6533;
+  color: #ff6b35;
   margin-bottom: 30px;
   font-size: 1.5rem;
   font-weight: bold;

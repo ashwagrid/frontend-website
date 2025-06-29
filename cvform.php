@@ -77,6 +77,13 @@ if ($response === FALSE) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data: https:;
+  style-src 'self' https: 'unsafe-inline';
+  font-src 'self' https:;
+  script-src 'self' 'unsafe-inline';
+">
   <title>ASHWAGRID - CV Maker Form</title>
   <link rel="stylesheet" href="allforms.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />

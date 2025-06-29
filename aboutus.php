@@ -5,13 +5,9 @@
  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   img-src 'self' data: https:;
-  style-src 'self' https://fonts.googleapis.com;
-  font-src https://fonts.gstatic.com;
-  script-src 'none';
-  object-src 'none';
-  frame-ancestors 'none';
-  base-uri 'self';
-  form-action 'self';
+  style-src 'self' https: 'unsafe-inline';
+  font-src 'self' https:;
+  script-src 'self' 'unsafe-inline';
 ">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">

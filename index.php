@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>AshwaGrid</title>
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data: http: https:;
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    font-src https://fonts.gstatic.com;
-    script-src 'self' 'unsafe-inline';
-    object-src 'none';
-    frame-ancestors 'none';
-    base-uri 'self';
-    form-action 'self';
-  ">
+   <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data: https:;
+  style-src 'self' https: 'unsafe-inline';
+  font-src 'self' https:;
+  script-src 'self' 'unsafe-inline';
+">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">

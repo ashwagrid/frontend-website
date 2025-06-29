@@ -53,17 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    img-src 'self' data: https:;
-    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-    font-src https://fonts.gstatic.com;
-    script-src 'self' 'unsafe-inline';
-    object-src 'none';
-    frame-ancestors 'none';
-    base-uri 'self';
-    form-action 'self';
-  ">
+   <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data: https:;
+  style-src 'self' https: 'unsafe-inline';
+  font-src 'self' https:;
+  script-src 'self' 'unsafe-inline';
+">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
   <title>ASHWAGRID - Contact</title>

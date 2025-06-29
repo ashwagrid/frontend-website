@@ -139,3 +139,14 @@ document.addEventListener("DOMContentLoaded", function () {
 function execCmd(command) {
   document.execCommand(command, false, null);
 }
+
+// blog searchbar 
+document.getElementById("searchInput").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const posts = document.querySelectorAll(".blog-post");
+
+  posts.forEach((post) => {
+    const content = post.textContent.toLowerCase();
+    post.style.display = content.includes(query) ? "block" : "none";
+  });
+});

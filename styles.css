@@ -100,7 +100,7 @@ nav img {
 }
 
 .cards-container::-webkit-scrollbar-thumb {
-  background: #f26522;
+  background: #ff6b35;
   border-radius: 4px;
 }
 
@@ -174,7 +174,7 @@ a.card p {
 .btn {
   display: inline-block;
   padding: 10px 24px;
-  background-color: #f26522;
+  background-color: #ff6b35;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
@@ -183,7 +183,7 @@ a.card p {
 }
 
 .btn:hover {
-  background-color: #d9541c;
+  background-color: #ff6b35;
 }
 
 /* Responsive Styles */
@@ -247,13 +247,13 @@ a.card.hovered .btn {
 }
 
 a.card.hovered .btn {
-  background-color: #d9541c;
+  background-color: #ff6b35;
 }
 
 /* ==== FOOTER SECTION ======================= */
 footer {
   width: 100%;
-  background-color: #162040;
+  background-color: #1c2541;
   color: #fff;
   padding: 40px;
   display: flex;
@@ -281,7 +281,7 @@ footer {
 }
 
 .footer-column h4 {
-  color: #ff6533;
+  color: #ff6b35;
   margin-bottom: 30px;
   font-size: 1.5rem;
   font-weight: bold;

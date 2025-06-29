@@ -136,12 +136,12 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #e9601d;
+  color: #ff6b35;
   transition: color 0.3s ease;
 }
 
 nav ul li a.active {
-  color: #e9601d;
+  color: #ff6b35;
   font-weight: bold; /* optional */
 }
 
@@ -273,7 +273,7 @@ nav ul li a.active {
 .btn:hover {
   transform: scale(1.1);
   text-decoration: none;
-  color: #e9601d;
+  color: #ff6b35;
 } 
 /* Responsive */
 @media (max-width: 1200px) {
@@ -361,14 +361,14 @@ nav ul li a.active {
 }
 
 .blue {
-  color: #1c1d4e;
+  color: #1c2541;
   display: block;
   text-align: left;
   margin-left: -20px;
 }
 
 .orange {
-  color: #ff6533;
+  color: #ff6b35;
   display: block;
   text-align: left;
   margin-left: 30%;
@@ -434,14 +434,14 @@ nav ul li a.active {
 
 /* TEXT COLORS */
 .blue {
-  color: #1c1d4e;
+  color: #1c2541;
   display: block;
   text-align: left;
   margin-left: 0;
 }
 
 .orange {
-  color: #ff6533;
+  color: #ff6b35;
   display: block;
   text-align: left;
   margin-left: 30%;
@@ -664,7 +664,7 @@ nav ul li a.active {
 /* FPOTER SECTION **************************************************************************************** */
 footer {
   width: 100%;
-  background-color: #162040;
+  background-color: #1c2541;
   color: #fff;
   padding: 40px;
   display: flex;
@@ -693,7 +693,7 @@ footer {
 }
 
 .footer-column h4 {
-  color: #ff6533;
+  color: #ff6b35;
   margin-bottom: 30px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -731,64 +731,80 @@ footer {
 /* blogg section ******************************************************************************* */
 
 
+.blog-search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #f1f1f1;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .search-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 400px;
-    margin: 0;
-     flex: 1;
+  flex: 1;
+  max-width: 500px;
 }
 
 .search-wrapper input {
   width: 100%;
-  padding: 10px 40px 10px 15px; /* right padding for icon */
+  padding: 12px 45px 12px 15px;
   font-size: 16px;
+  border: 2px solid #3f4a5a;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  outline: none;
+  background: white;
+  color: #333;
+}
+
+.search-wrapper input::placeholder {
+  color: #bbb;
+  font-style: italic;
 }
 
 .search-icon {
   position: absolute;
-  right: 12px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  fill: black; /* Black color */
-  pointer-events: none; /* so the input still works under it */
+  fill: #3f4a5a;
 }
 
-.blog-search-filter {
+#filterBtn {
   display: flex;
-  gap: 10px;
-  padding: 20px; /* Instead of margin on child items */
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f1f1f1;
-  flex-wrap: wrap; /* Added for small screen fallback */
-}
-
-
-.blog-search-filter input {
-  flex: 0.4;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px 16px;
   font-size: 16px;
-  border-radius: 8px;
-  margin: 0;
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  white-space: nowrap;
 }
 
-.blog-search-filter button {
-  padding: 12px 18px;
-  font-size: 15px;
-  color: #4b5563;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-   margin: 0;
+
+.filter-icon {
+  width: 25px;
+  height: 25px;
+  fill: #4b5563;
+}
+.blog-post {
+  transition: all 0.3s ease;
+}
+
+.blog-post[style*="display: none"] {
+  opacity: 0;
+  transform: scale(0.98);
 }
 
 .blog-articles {
@@ -836,7 +852,7 @@ background-color: #f1f1f1;
 }
 
 .read-more {
-  color: #ff6533;
+  color: #ff6b35;
   text-decoration: none;
   font-weight: bold;
 }
@@ -902,7 +918,7 @@ background-color: #f1f1f1;
 .blog-card.small h4 {
   font-size: 16px;
   margin-bottom: 8px;
-  color: #101c3c;
+  color: #1c2541;
 }
 
 .blog-card.small p {
@@ -912,35 +928,35 @@ background-color: #f1f1f1;
 .blog-header {
   position: relative;
   width: 100%;
-  padding: 30px 20px;
-  background-color: #ff6533;
+  padding: 30px 30px;
+  background-color: #ff6b35;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-.blog-header h1 {
-  font-size: 48px;                /* Bigger and more impactful */
+.blogh1 {
+  font-size: 52px;                /* Bigger and more impactful */
   font-weight: 800;               /* Bolder for emphasis */
   color: white;
   line-height: 1.4;               /* Nicely spaced */
   text-align: left;
-  max-width: 800px;               /* Controls when it wraps */
+  max-width: 900px;               /* Controls when it wraps */
   margin: 0 0 20px 0;             /* Bottom gap only */
   word-break: break-word;        /* Break long words if needed */
 }
 
 
-.blog-header p {
-  font-size: 15px;
+.blogp {
+  font-size: 20px;
   color: white;
-  max-width: 600px;
+  max-width: 900px;
   text-align: left;
 }
 
 .blog-header-logo-bg {
   position: absolute;
-  top: 30%;
+  top: 25%;
   right: 40px;
   transform: translateY(-30%);
   opacity: 0.15;
@@ -950,7 +966,7 @@ background-color: #f1f1f1;
 
 
 .blog-header-logo-bg img {
-  height: 160px;
+  height: 200px;
   width: auto;
 }
 /* Responsive */

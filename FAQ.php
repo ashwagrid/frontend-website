@@ -57,11 +57,13 @@
           <button onclick="searchFAQ()">Search</button>
         </div>
       </div>
+
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
       <h2>Frequently Asked Questions</h2>
+   <p id="noResults" style="display:none; color: red;">No matching results found.</p>
 
       <div class="faq-wrapper">
         <!-- Left: FAQ List -->
@@ -90,7 +92,23 @@
             <div class="question"><span class="arrow">&gt;</span> Do I have to pay any fees to join?</div>
             <div class="answer">No. <br>Joining AshwaGrid is completely free for all job seekers.</div>
           </div>
+           <div class="faq-item search-only">
+  <div class="question"><span class="arrow">&gt;</span> What types of services does AshwaGrid provide?</div>
+  <div class="answer">AshwaGrid offers mobility services (chauffeur-driven vehicles, pickup-drop, intercity rides) and manpower services (drivers, electricians, security guards, housekeeping staff, and more).</div>
+</div>
+
+<div class="faq-item search-only">
+  <div class="question"><span class="arrow">&gt;</span> How can I request a driver or manpower?</div>
+  <div class="answer"> Click on “Access the Grid” in the menu and fill in your requirement form. Our team will connect with you within 24 hours.</div>
+</div>
+
+<div class="faq-item search-only">
+  <div class="question"><span class="arrow">&gt;</span> Can I request multiple staff for different roles?</div>
+  <div class="answer"> Yes, we cater to both single and bulk manpower requests across various roles and cities.</div>
+</div>
         </div>
+       
+
          
         <!-- Right: Logo -->
         <div class="faq-logo">
@@ -123,21 +141,43 @@
       document.getElementById('faqSearch').addEventListener('input', searchFAQ);
     });
 
-    function searchFAQ() {
-      const input = document.getElementById('faqSearch').value.toLowerCase();
-      const faqItems = document.querySelectorAll('.faq-item');
+  function searchFAQ() {
+  const input = document.getElementById('faqSearch').value.toLowerCase();
+  const faqItems = document.querySelectorAll('.faq-item');
+  const noResultsMsg = document.getElementById('noResults'); // optional
 
-      faqItems.forEach(item => {
-        const question = item.querySelector('.question').innerText.toLowerCase();
-        const answer = item.querySelector('.answer').innerText.toLowerCase();
+  let found = false;
 
-        if (question.includes(input) || answer.includes(input)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+  faqItems.forEach(item => {
+    const isSearchOnly = item.classList.contains('search-only');
+    const question = item.querySelector('.question').innerText.toLowerCase();
+    const answer = item.querySelector('.answer').innerText.toLowerCase();
+
+    if (input === '') {
+      // Show only non-search-only questions when input is empty
+      if (isSearchOnly) {
+        item.style.display = 'none';
+      } else {
+        item.style.display = 'block';
+      }
+    } else {
+      // Searching: show matching items
+      if (question.includes(input) || answer.includes(input)) {
+        item.style.display = 'block';
+        found = true;
+      } else {
+        item.style.display = 'none';
+      }
     }
+  });
+
+  // Optional "no results" message
+  if (noResultsMsg) {
+    noResultsMsg.style.display = (input !== '' && !found) ? 'block' : 'none';
+  }
+}
+
+
   </script>
 </body>
 </html>

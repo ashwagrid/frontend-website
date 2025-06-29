@@ -5,13 +5,9 @@
  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   img-src 'self' data: https:;
-  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-  font-src https://fonts.gstatic.com;
-  script-src 'self' ;
-  object-src 'none';
-  frame-ancestors 'none';
-  base-uri 'self';
-  form-action 'self';
+  style-src 'self' https: 'unsafe-inline';
+  font-src 'self' https:;
+  script-src 'self' 'unsafe-inline';
 ">
 
 <meta http-equiv="X-Frame-Options" content="DENY">
@@ -69,14 +65,26 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
     <!-- NAVIGATION BAR  -->
-    <nav>
-      <ul>
-        <li><a href="mobility.php" class="active" >Home</a></li>
-        <li><a href="aboutus.php" >About Us</a></li>
-     <li class="dropdown1"><a href="">Service</a></li>
-        <li><a href="Inventory.php">Inventor Page </a></li>
+   <nav>
+  <ul>
+    <li><a href="mobility.php" class="active">Home</a></li>
+    <li><a href="aboutus.php">About Us</a></li>
+    
+    <li class="dropdown1">
+      <a href="#">Services</a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-arrow"></li>
+        <li><a class="highlighted" href="#">Corporate Contact</a></li>
+        <li><a href="#">Car Rental Booking</a></li>
+        <li><a href="#">Uber Services</a></li>
       </ul>
-    </nav>
+    </li>
+
+    <li><a href="Inventory.php">Inventory Page</a></li>
+  </ul>
+</nav>
+
+
   </header>
 <main class="hero-section">
   <div class="hero-content">
