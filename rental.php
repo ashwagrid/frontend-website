@@ -35,24 +35,30 @@
       window.location.href = selectedValue;
     }
   }
+// FOR SERVICE DROPDOWN
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.getElementById("servicesMenu");
 
-   document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('servicesToggle');
-    const menu = document.getElementById('servicesMenu');
-
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      menu.classList.toggle('show');
-    });
-
-    // Close dropdown if clicking outside
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-    });
+  // Toggle dropdown on click
+  dropdownToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation(); // prevent the document click event
+    dropdownMenu.classList.toggle("show");
   });
 
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown1")) {
+      dropdownMenu.classList.remove("show");
+    }
+  });
+
+  // Optional: close dropdown when clicking an item inside
+  dropdownMenu.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+});
  
 function validateCorporateForm() {
   const phone = document.querySelector('input[name="phone"]').value.trim();
@@ -74,15 +80,16 @@ function validateCorporateForm() {
       <ul>
         <li><a href="mobility.php" >Home</a></li>
         <li><a href="aboutus.php" >About Us</a></li>
-      <li class="dropdown1">
-  <a class="active">Services</a>
- <ul class="dropdown-menu1" id="servicesMenu">
-  <li class="dropdown-arrow1"></li>
-  <li><a href="corporate.php">Corporate Contact</a></li>
-  <li><a href="rental.php">Car Rental Booking</a></li>
-  <li><a href="uber.php">Uber Services</a></li>
-</ul>
-</li>
+      
+    <li class="dropdown1">
+<a href="#" class="active" style="color:#ff6b35; font-weight:bold;">Services</a>
+      <ul class="dropdown-menu">
+        <li class="dropdown-arrow"></li>
+        <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
+        <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
+        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+      </ul>
+    </li>
   <li><a href="Inventory.php">Inventor Page </a></li>
       </ul>
     </nav>

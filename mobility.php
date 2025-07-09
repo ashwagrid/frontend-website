@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <a href="#">Services</a>
       <ul class="dropdown-menu">
         <li class="dropdown-arrow"></li>
-        <li><a class="highlighted" href="#">Corporate Contact</a></li>
-        <li><a href="#">Car Rental Booking</a></li>
-        <li><a href="#">Uber Services</a></li>
+        <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
+        <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
+        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
       </ul>
     </li>
 
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="card-container"> 
     <div class="card">
-      <img src="images/7.png" alt="Car Rental">
+      <img src="images/M3.png" alt="Car Rental">
       <div class="card-content">
         <h3>Car Rental</h3>
         <p>Premium and budget vehicles for daily and short-term use.</p>
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
     <div class="card">
-      <img src="images/8.png" alt="City-to-City Ride">
+      <img src="images/M4.png" alt="City-to-City Ride">
       <div class="card-content">
         <h3>City-to-City Ride</h3>
         <p>Comfortable intercity rides at affordable prices.</p>
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 
     <div class="card">
-      <img src="images/9.png" alt="Explore Mumbai">
+      <img src="images/M1.png" alt="Explore Mumbai">
       <div class="card-content">
         <h3>Explore Mumbai</h3>
         <p>Explore the city with guided tours and pickup/drop.</p>

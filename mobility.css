@@ -140,8 +140,8 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  color: #ff6b35;
-  font-weight: bold; 
+  color: #ff6b35 !important;
+  font-weight: bold !important; 
 }
 
 .dropdown1 {
@@ -276,6 +276,7 @@ nav ul li a.active {
   align-items: flex-end;
   justify-content: center;
   background-color: white;
+  row-gap: 50px;
 }
 
 .card:hover {
@@ -543,7 +544,7 @@ nav ul li a.active {
   border-radius: 12px;
   padding: 70px 40px;
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   background-color: #1c2541;
 }
 
@@ -597,7 +598,7 @@ textarea {
   border-radius: 15px;
   padding: 10px 14px;
   background-color: #ff6b35;
-  color: white;
+  color: #ffbba3;
   font-size: 1rem;
 }
 
@@ -626,6 +627,43 @@ textarea {
 
 .submit-btn:hover {
   background-color: #e0e0e0;
+}
+select.corporate {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 14px;
+  background-color: #ff6b35;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+
+  appearance: none;            /* removes native dropdown arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;      /* no custom arrow */
+}
+
+select.corporate:required:invalid {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+select.corporate option {
+  color: #1c2541;              /* text inside dropdown list */
+  background-color: #fff;      /* background inside dropdown list */
+}
+.form-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.form-message.success {
+  color: white; 
+}
+
+.form-message.error {
+  color: white;
 }
 
 /* Responsive Adjustments */
@@ -728,7 +766,6 @@ textarea {
 }
 
 .rental-text {
-  background: url('your-background-image.jpg') no-repeat center center/cover;
   border-radius: 12px;
   padding: 5vh 5vw;
   text-align: left;
@@ -747,23 +784,21 @@ textarea {
   line-height: 1.6;
 }
 
-.rental img {
-  max-width: 100%;
-  height: auto;
-}
 
 /* Car animation */
 .moving-car {
   position: absolute;
-  bottom: 5vh;
+  bottom: 10px;
   left: -30vw;
-  width: 20vw;
-  max-width: 300px;
-  min-width: 120px;
+  width: 60vw;            
+  max-width: 1000px;      
+  min-width: 300px;        
   opacity: 0;
   pointer-events: none;
   z-index: 1;
 }
+
+
 
 @keyframes driveRight {
   0% {
@@ -784,7 +819,7 @@ textarea {
 }
 
 .animate {
-  animation: driveRight 8s linear forwards;
+  animation: driveRight 4s linear forwards;
 }
 
 /* Welcome Section */
@@ -817,8 +852,9 @@ textarea {
   }
 
   .moving-car {
-    width: 25vw;
-    min-width: 100px;
+    width: 40vw;
+    max-width: 350px;
+    min-width: 200px;
   }
 
   .welcome-section {
@@ -870,13 +906,6 @@ margin: 40px 0 60px 0;
   color: #1c2541; 
 }
 
-.booking-form-section label {
-  font-weight: 600;
-  margin-bottom: 6px;
-  display: block;
-  font-size: 14px;
-}
-
 button.rental1 {
   background-color: #ff6b35;
   color: #fff;
@@ -895,73 +924,106 @@ button.rental1 {
 /* INVENTORY PAGE********************************************************************************************* */
 .login-container {
   display: flex;
-  height: 100vh;
+  height: 700px;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* LEFT PANEL */
 .login-left {
-  width: 50%;
-  background: #1c2541 url('images/team-background.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 40px;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.logo-area {
+/* Top branding area with bg image and logo */
+.login-branding {
+  flex: 1;
+ background: 
+    linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.7)), 
+    url('images/6.png') no-repeat center center;  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
+  padding: 40px;
 }
 
 .main-logo {
-  width: 100px;
+  width: 400px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
-.logo-area h1 {
+.brand-text {
+  font-size: 2.5rem;
+  font-weight: bold;
   color: #ff6b35;
-  margin-top: 10px;
 }
 
-.contact-info {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 12px;
+/* Contact section at bottom */
+.contact-box {
+  flex: 1;
+  background-color:#1c2541 ;
+  padding: 30px;
+  border-bottom-left-radius: 16px;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .contact-info h3 {
   color: #ff6b35;
   margin-bottom: 15px;
+  font-size: 3rem;
 }
 
-.contact-info p {
+.contact-info a {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 10px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .contact-info img {
   width: 16px;
+  height: 16px;
+}
+.contact-info i {
+  width: 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* Social Icons */
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .social-icons img {
-  width: 25px;
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1); /* make icons white */
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
 }
 
 /* RIGHT PANEL */
 .login-right {
-  width: 50%;
+  width: 35%;
   background: white;
   padding: 60px 40px;
   text-align: center;
@@ -971,7 +1033,8 @@ button.rental1 {
 
 .illustration {
   width: 60%;
-  max-width: 300px;
+  width: 300px;
+  max-width: 600px;
   margin-bottom: 40px;
 }
 
@@ -979,34 +1042,43 @@ button.rental1 {
   width: 80%;
   padding: 12px;
   margin: 12px 0;
-  border: 2px solid #ccc;
+  border: 2px solid #d8d8d8;
   border-radius: 25px;
   font-size: 15px;
 }
-
-.forgot {
-  margin-top: -10px;
-  margin-bottom: 25px;
-  text-align: right;
-  width: 80%;
-  margin-left: auto;
-  font-size: 13px;
+.inventory {
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
+.inventory::placeholder {
+  color: #7f7f7f;
+  opacity: 1;
+}
+.forgot {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 80%;
+  margin-left: 40px;
+  font-size: 13px;
+ }
+ .forgot a{
+  text-decoration: none;
+  color: #7f7f7f;
+ }
 
 .login-btn {
   background-color: #ff6b35;
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 10px 40px;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 900;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.login-btn:hover {
-  background-color: #ff6b35;
-}
  /* FPOTER SECTION **************************************************************************************** */
 footer {
   width: 100%;

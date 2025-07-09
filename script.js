@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ========== 3. Car Animation ==========
   const carImages = [
-    "images/20.png",
-    "images/21.png",
-    "images/22.png",
-    "images/23.png"
+    "images/M7.png",
+    "images/M5.png",
+    "images/M8.png",
+    "images/M6.png"
   ];
   let carIndex = 0;
 
@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
       car.remove();
-    }, 8000);
+    }, 4000);
 
     carIndex = (carIndex + 1) % carImages.length;
   }
 
   // Start and repeat animation
   animateCars();
-  setInterval(animateCars, 8000);
+  setInterval(animateCars, 4000);
 
   // for rental.php form
    document.getElementById("rideForm").addEventListener("submit", function(e) {
@@ -150,3 +150,5 @@ document.getElementById("searchInput").addEventListener("input", function () {
     post.style.display = content.includes(query) ? "block" : "none";
   });
 });
+
+
