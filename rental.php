@@ -87,7 +87,7 @@ function validateCorporateForm() {
         <li class="dropdown-arrow"></li>
         <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
         <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
-        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+       
       </ul>
     </li>
   <li><a href="Inventory.php">Inventor Page </a></li>
@@ -117,14 +117,14 @@ function validateCorporateForm() {
   </div>
 <div class="booking-form-section">
   <h3>Book Your Ride Here!</h3>
-  <form method="post" action="submit.php" id="rideForm">
+  <form method="post" action="https://script.google.com/macros/s/AKfycbxsCqNsG61oThC7CWiYSNAz5EIoQNQrnYMj-4lwBcoOXefviSNvhXQKXNSCu_tMxET3NQ/exec" id="rideForm">
     <div class="row">
       <div>
         <label>Pickup Location</label>
-        <input class="rental1" type="text" name="pickup1" required />
+      <input class="rental1" type="text" id="pickup1" name="pickup1" placeholder="Paste Google Map's location link" required>
       </div>
       <div>
-        <label>Pickup Location</label>
+        <label>Drop Location</label>
         <input class="rental1" type="text" name="pickup2" required />
       </div>
     </div>
@@ -132,26 +132,26 @@ function validateCorporateForm() {
     <div class="row">
       <div>
         <label>Date</label>
-        <input class="rental1" type="date" name="date1" required />
+        <input class="rental1" type="date" name="your_date1" required />
       </div>
       <div>
         <label>Time</label>
-        <input class="rental1" type="time" name="time1" required />
+        <input class="rental1" type="time" name="your_time1" required />
       </div>
       <div>
         <label>Date</label>
-        <input class="rental1" type="date" name="date2" required />
+        <input class="rental1" type="date" name="your_date2" required />
       </div>
       <div>
         <label>Time</label>
-        <input class="rental1" type="time" name="time2" required />
+        <input class="rental1" type="time" name="your_time2" required />
       </div>
     </div>
 
     <div class="row">
       <div>
         <label>Select Car</label>
-        <select class="rental1" name="car">
+        <select class="rental1" name="your_car">
           <option>Sedan</option>
           <option>SUV</option>
           <option>Mini</option>
@@ -160,19 +160,19 @@ function validateCorporateForm() {
       </div>
       <div>
         <label>Number of People</label>
-        <input class="rental1" type="number" name="people" required />
+        <input class="rental1" type="number" name="your_people" required />
       </div>
       <div>
         <label>Number of Cars Needed</label>
-        <input class="rental1" type="number" name="cars" required />
+        <input class="rental1" type="number" name="your_cars" required />
       </div>
     </div>
 
-    <button type="submit" class="rental1">Continue ➜</button>
+    <button type="submit" class="rental1">Submit ➜</button>
   </form>
 </div>
 
   <!-- script.js line 32 ************************************************* -->
-   <script src="script.js"></script>
+   <script src="rental.js"></script>
 </body>
 </html>

@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li class="dropdown-arrow"></li>
         <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
         <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
-        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+       
       </ul>
     </li>
 
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="features">
     <div class="feature-card">
-      <img src="https://i.imgur.com/MOGDq8O.png" alt="Driver Experience" />
+      <img src="/https://i.imgur.com/MOGDq8O.png" alt="Driver Experience" />
       <a href="#">Driver-Inclusive Experience</a>
       <p>Every booking includes a trained, verified, and uniformed driver. No self-drive hassles—just sit back and relax.</p>
     </div>

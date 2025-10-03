@@ -24,6 +24,7 @@
 </head>
 <body>
   <header>
+    <div class="content"> 
     <div class="logo">
       <img src="images/ashwa.png" alt="ASHWAGRID Logo">
       <select class="dropdown"  id="redirectDropdown" onchange="redirectPage()">
@@ -78,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <li class="dropdown-arrow"></li>
         <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
         <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
-        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+      
       </ul>
     </li>
- <li><a href="Inventory.php" class="active">Inventor Page </a></li>
+ <li><a href="Inventory.php" class="active">Investor's Side </a></li>
 </ul>
     </nav>
   </header>
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       <div class="social-icons">
-        <a href="#" target="_blank"><img src="images/facebook.png" alt=""></a>
+   
         <a href="https://www.instagram.com/ashwagrid.hr/" target="_blank"><img src="images/insta.png" alt=""></a>
         <a href="https://wa.me/918369733565" target="_blank"><img src="images/whatsapp.png" alt=""></a>
       </div>
@@ -114,15 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <!-- RIGHT PANEL -->
-  <div class="login-right">
-    <img src="images/M9.png" class="illustration" alt="Login Illustration">
-    <form method="post" action="dashboard.php">
-      <input class="inventory" type="text" name="username" placeholder="Username" required />
-      <input  class="inventory" type="password" name="password" placeholder="Password" required />
-      <div class="forgot"><a href="#">Forgot Password?</a></div>
-      <button type="submit" class="login-btn">Login</button>
-    </form>
-  </div>
+
 </div>
 </body>
 </html>

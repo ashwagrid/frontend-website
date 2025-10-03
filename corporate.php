@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <li class="dropdown-arrow"></li>
         <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
         <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
-        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+ 
       </ul>
     </li>
   <li><a href="Inventory.php">Inventor Page </a></li>
@@ -162,31 +162,31 @@ document.addEventListener("DOMContentLoaded", function () {
     </p>
   </div>
 <form class="corporate-form"
- action=""
+ action="https://script.google.com/macros/s/AKfycbwzeWgsaxJQGMCSaWar_mH9___UvEeLyWfsdQ1iMMkOueCECK_Wt9gBxds_t0JPHxIcEw/exec"
   method="POST">
   <div class="form-row">
     <div class="form-group">
       <label>Name</label>
-      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="text" name="your_name" placeholder="Your Name" required />
     </div>
     <div class="form-group">
       <label>Company Name</label>
-      <input type="text" name="company" placeholder="Company Name" required />
+      <input type="text" name="your_company" placeholder="Company Name" required />
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group">
       <label>Phone No.</label>
-      <input type="tel" name="phone" placeholder="+91" required pattern="[0-9]{10}" title="Enter 10-digit mobile number" />
+      <input type="tel" name="your_phone" placeholder="+91" required pattern="[0-9]{10}" title="Enter 10-digit mobile number" />
     </div>
     <div class="form-group">
       <label>Email ID</label>
-      <input type="email" name="email" placeholder="@gmail.com" required />
+      <input type="email" name="your_email" placeholder="@gmail.com" required />
     </div>
     <div class="form-group">
   <label>Service Needed</label>
-  <select name="service" class="corporate" required>
+  <select name="your_service" class="corporate" required>
     <option value="" disabled selected hidden></option>
     <option value="Employee Transport">Employee Transport</option>
     <option value="Corporate Car Rental">Corporate Car Rental</option>
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   <div class="form-group full-width">
     <label>Message Box</label>
-    <textarea name="message" placeholder="Your message..." required></textarea>
+    <textarea name="your_message" placeholder="Your message..." required></textarea>
   </div>
 <?php if (!empty($successMessage)) : ?>
   <p class="form-message success"><?php echo $successMessage; ?></p>
@@ -214,7 +214,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </section>
 
-<script src="script.js"></script>
+<script>
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop default form submission
+
+    // Submit the form using Fetch
+    fetch(this.action, {
+        method: this.method,
+        body: new FormData(this)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === "success") {
+            // Redirect to thank-you page
+            window.location.href = "thankyou.html"; // Change to your thank-you page URL
+        } else {
+            alert("Something went wrong: " + data.error);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Submission passed!");
+    });
+});
+</script>
+
+<script src="corporateform.js"></script>
 
 </body>
 </html>

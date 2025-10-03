@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <li class="dropdown-arrow"></li>
         <li><a class="highlighted" href="corporate.php">Corporate Contact</a></li>
         <li><a class="highlighted" href="rental.php">Car Rental Booking</a></li>
-        <li><a class="highlighted" href="uber.php">Uber Services</a></li>
+       
+        
       </ul>
     </li>
 
